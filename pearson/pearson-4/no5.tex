@@ -1,0 +1,57 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 5 - Numerical Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Estimasi Nilai Rata-Rata Fungsi dengan Titik Tengah}
+
+Diketahui fungsi $f(t) = 5.5 + \sin^2(\pi t)$ pada interval $[a, b] = [6, 8]$. Kita akan mengestimasi nilai rata-rata fungsi menggunakan $n = 4$ sub-interval dengan evaluasi pada titik tengah (\textit{midpoint}).
+
+\subsection*{1. Menentukan Lebar Sub-interval ($\Delta t$)}
+Lebar masing-masing sub-interval adalah:
+\[ \Delta t = \frac{b - a}{n} = \frac{8 - 6}{4} = \frac{2}{4} = 0.5 \]
+
+\subsection*{2. Menentukan Titik Tengah ($m_i$)}
+Sub-interval yang terbentuk adalah: $[6, 6.5], [6.5, 7], [7, 7.5],$ dan $[7.5, 8]$. 
+Titik tengah masing-masing sub-interval ($m_i$) adalah:
+\begin{itemize}
+    \item $m_1 = \frac{6 + 6.5}{2} = 6.25$
+    \item $m_2 = \frac{6.5 + 7}{2} = 6.75$
+    \item $m_3 = \frac{7 + 7.5}{2} = 7.25$
+    \item $m_4 = \frac{7.5 + 8}{2} = 7.75$
+\end{itemize}
+
+\subsection*{3. Estimasi Nilai Rata-Rata ($\bar{f}$)}
+Rumus estimasi nilai rata-rata fungsi adalah:
+\[ \bar{f} \approx \frac{1}{b-a} \sum_{i=1}^{n} f(m_i) \Delta t = \frac{1}{n} \sum_{i=1}^{4} f(m_i) \]
+
+Evaluasi fungsi pada titik tengah:
+\begin{enumerate}
+    \item $f(6.25) = 5.5 + \sin^2(6.25\pi) = 5.5 + \sin^2(6\pi + 0.25\pi) = 5.5 + (1/\sqrt{2})^2 = 6$
+    \item $f(6.75) = 5.5 + \sin^2(6.75\pi) = 5.5 + \sin^2(6\pi + 0.75\pi) = 5.5 + (1/\sqrt{2})^2 = 6$
+    \item $f(7.25) = 5.5 + \sin^2(7.25\pi) = 5.5 + \sin^2(7\pi + 0.25\pi) = 5.5 + (1/\sqrt{2})^2 = 6$
+    \item $f(7.75) = 5.5 + \sin^2(7.75\pi) = 5.5 + \sin^2(7\pi + 0.75\pi) = 5.5 + (1/\sqrt{2})^2 = 6$
+\end{enumerate}
+
+Maka kalkulasinya adalah:
+\[ \bar{f} \approx \frac{1}{4} (6 + 6 + 6 + 6) = \frac{24}{4} = 6 \]
+
+\subsection*{Kesimpulan}
+Estimasi nilai rata-rata fungsi $f(t)$ pada interval $[6, 8]$ menggunakan empat sub-interval titik tengah adalah \textbf{6}.
+
+\end{document}
