@@ -1,0 +1,49 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 7 - Aplikasi Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solusi Volume Benda Pejal}
+
+Benda pejal terletak di antara $y = 0$ dan $y = 1$. Penampang melintang yang tegak lurus sumbu-$y$ berbentuk piringan lingkaran (\textit{circular disk}) dengan diameter yang membentang dari sumbu-$y$ ($x = 0$) hingga kurva parabola $x = \sqrt{14}y^2$.
+
+\subsection*{1. Menentukan Jari-jari Lingkaran ($r$)}
+Diameter penampang ($D$) adalah jarak horizontal dari sumbu-$y$ ke kurva:
+\[ D(y) = \sqrt{14}y^2 - 0 = \sqrt{14}y^2 \]
+Jari-jari ($r$) adalah setengah dari diameter:
+\[ r(y) = \frac{\sqrt{14}y^2}{2} \]
+
+\subsection*{2. Menentukan Luas Penampang ($A$)}
+Karena penampang berbentuk lingkaran, luasnya ($A$) adalah:
+\[ A(y) = \pi [r(y)]^2 = \pi \left( \frac{\sqrt{14}y^2}{2} \right)^2 \]
+\[ A(y) = \pi \left( \frac{14y^4}{4} \right) = \frac{7\pi}{2} y^4 \]
+
+\subsection*{3. Menghitung Volume ($V$)}
+Volume diperoleh dengan mengintegralkan fungsi luas penampang terhadap $y$ dari $0$ hingga $1$:
+\begin{align*}
+V &= \int_{0}^{1} A(y) \, dy \\
+V &= \int_{0}^{1} \frac{7\pi}{2} y^4 \, dy \\
+V &= \frac{7\pi}{2} \left[ \frac{1}{5} y^5 \right]_{0}^{1} \\
+V &= \frac{7\pi}{2} \left( \frac{1}{5}(1)^5 - 0 \right) \\
+V &= \frac{7\pi}{10}
+\end{align*}
+
+\subsection*{Kesimpulan}
+Jadi, volume benda pejal tersebut adalah $\mathbf{\frac{7\pi}{10}}$ \textbf{satuan kubik}.
+
+\end{document}
