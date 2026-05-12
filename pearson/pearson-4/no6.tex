@@ -1,0 +1,49 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 6 - Aplikasi Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solusi Volume Benda Pejal}
+
+Benda pejal terletak di antara bidang-bidang yang tegak lurus sumbu-$x$ pada $x = -3$ dan $x = 3$. Penampang melintang yang tegak lurus sumbu-$x$ berbentuk persegi dengan alas yang membentang dari setengah lingkaran $y = -\sqrt{9 - x^2}$ hingga $y = \sqrt{9 - x^2}$.
+
+\subsection*{1. Menentukan Panjang Sisi Persegi ($s$)}
+Panjang sisi penampang persegi, $s(x)$, ditentukan oleh jarak antara dua kurva setengah lingkaran tersebut:
+\[ s(x) = \sqrt{9 - x^2} - (-\sqrt{9 - x^2}) = 2\sqrt{9 - x^2} \]
+
+\subsection*{2. Menentukan Luas Penampang ($A$)}
+Karena penampang berbentuk persegi, maka luasnya ($A$) adalah kuadrat dari panjang sisinya:
+\[ A(x) = [s(x)]^2 = (2\sqrt{9 - x^2})^2 = 4(9 - x^2) = 36 - 4x^2 \]
+
+\subsection*{3. Menghitung Volume ($V$)}
+Volume diperoleh dengan mengintegralkan fungsi luas penampang dari $x = -3$ sampai $x = 3$:
+\[ V = \int_{-3}^{3} A(x) \, dx = \int_{-3}^{3} (36 - 4x^2) \, dx \]
+
+Menggunakan sifat simetri (fungsi genap), kita dapat menghitung integral dari $0$ sampai $3$ dan mengalikannya dengan dua:
+\begin{align*}
+V &= 2 \int_{0}^{3} (36 - 4x^2) \, dx \\
+V &= 2 \left[ 36x - \frac{4}{3}x^3 \right]_{0}^{3} \\
+V &= 2 \left[ \left( 36(3) - \frac{4}{3}(3)^3 \right) - 0 \right] \\
+V &= 2 [ 108 - 36 ] \\
+V &= 2 [ 72 ] = 144
+\end{align*}
+
+\subsection*{Kesimpulan}
+Jadi, volume benda pejal tersebut adalah \textbf{144 satuan kubik}.
+
+\end{document}
