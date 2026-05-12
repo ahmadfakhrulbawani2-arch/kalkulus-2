@@ -1,0 +1,53 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 9 - Aplikasi Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solusi Volume Benda Putar}
+
+Diketahui daerah yang dibatasi oleh kurva $y = 4\sqrt{\sin x}$, sumbu-$x$ ($y=0$), serta garis $x = \frac{\pi}{4}$ dan $x = \frac{2\pi}{3}$ diputar mengelilingi sumbu-$x$. Kita akan menghitung volumenya menggunakan metode cakram (\textit{disk method}).
+
+\subsection*{1. Rumus Volume Metode Cakram}
+Karena sumbu putar adalah sumbu-$x$, maka volume ($V$) dihitung dengan rumus:
+\[ V = \int_{a}^{b} \pi [f(x)]^2 \, dx \]
+Substitusi fungsi $f(x) = 4\sqrt{\sin x}$ dan batas interval $[\frac{\pi}{4}, \frac{2\pi}{3}]$:
+\[ V = \pi \int_{\pi/4}^{2\pi/3} \left( 4\sqrt{\sin x} \right)^2 \, dx \]
+\[ V = \pi \int_{\pi/4}^{2\pi/3} 16 \sin x \, dx \]
+
+\subsection*{2. Menghitung Integral}
+Keluarkan konstanta dan integralkan $\sin x$:
+\begin{align*}
+V &= 16\pi \int_{\pi/4}^{2\pi/3} \sin x \, dx \\
+V &= 16\pi \left[ -\cos x \right]_{\pi/4}^{2\pi/3}
+\end{align*}
+
+Evaluasi pada batas-batas tersebut:
+\begin{itemize}
+  \item Untuk $x = \frac{2\pi}{3}$: $-\cos(\frac{2\pi}{3}) = -(-\frac{1}{2}) = \frac{1}{2}$
+  \item Untuk $x = \frac{\pi}{4}$: $-\cos(\frac{\pi}{4}) = -\frac{\sqrt{2}}{2}$
+\end{itemize}
+
+\subsection*{3. Hasil Akhir}
+\[ V = 16\pi \left( \frac{1}{2} - \left( -\frac{\sqrt{2}}{2} \right) \right) \]
+\[ V = 16\pi \left( \frac{1 + \sqrt{2}}{2} \right) \]
+\[ V = 8\pi (1 + \sqrt{2}) \]
+
+\subsection*{Kesimpulan}
+Jadi, volume benda putar yang dihasilkan adalah $\mathbf{8\pi (1 + \sqrt{2})}$ \textbf{satuan kubik}.
+
+\end{document}
