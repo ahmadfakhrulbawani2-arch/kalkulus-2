@@ -1,0 +1,54 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 8 - Aplikasi Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solusi Volume Benda Putar}
+
+Diketahui daerah yang dibatasi oleh kurva $y = 5 \sin x \cos x$ pada interval $[0, \pi/2]$ diputar mengelilingi sumbu-$x$. Kita akan menghitung volumenya menggunakan metode cakram (\textit{disk method}).
+
+\subsection*{1. Menyederhanakan Fungsi}
+Untuk mempermudah integrasi, kita gunakan identitas trigonometri $2 \sin x \cos x = \sin(2x)$:
+\[ y = 5 \sin x \cos x = \frac{5}{2} (2 \sin x \cos x) = \frac{5}{2} \sin(2x) \]
+
+\subsection*{2. Rumus Volume Metode Cakram}
+Karena sumbu putar adalah sumbu-$x$, maka volumenya adalah:
+\[ V = \int_{a}^{b} \pi [f(x)]^2 \, dx \]
+Substitusi fungsi dan batas interval $[0, \pi/2]$:
+\[ V = \pi \int_{0}^{\pi/2} \left( \frac{5}{2} \sin(2x) \right)^2 \, dx = \pi \int_{0}^{\pi/2} \frac{25}{4} \sin^2(2x) \, dx \]
+
+\subsection*{3. Menghitung Integral}
+Gunakan identitas $\sin^2 \theta = \frac{1 - \cos(2\theta)}{2}$. Dalam hal ini $\theta = 2x$, sehingga $\sin^2(2x) = \frac{1 - \cos(4x)}{2}$:
+\begin{align*}
+	V &= \frac{25\pi}{4} \int_{0}^{\pi/2} \frac{1 - \cos(4x)}{2} \, dx \\
+	V &= \frac{25\pi}{8} \int_{0}^{\pi/2} (1 - \cos(4x)) \, dx \\
+	V &= \frac{25\pi}{8} \left[ x - \frac{1}{4} \sin(4x) \right]_{0}^{\pi/2}
+\end{align*}
+
+Evaluasi batas integrasi:
+\begin{itemize}
+  \item Untuk $x = \pi/2$: $(\pi/2) - \frac{1}{4} \sin(4 \cdot \frac{\pi}{2}) = \pi/2 - \frac{1}{4} \sin(2\pi) = \pi/2 - 0 = \pi/2$
+  \item Untuk $x = 0$: $0 - \frac{1}{4} \sin(0) = 0$
+\end{itemize}
+
+\[ V = \frac{25\pi}{8} \left( \frac{\pi}{2} \right) = \frac{25\pi^2}{16} \]
+
+\subsection*{Kesimpulan}
+Jadi, volume benda putar yang dihasilkan adalah $\mathbf{\frac{25\pi^2}{16}}$ \textbf{satuan kubik}.
+
+\end{document}
