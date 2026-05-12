@@ -1,0 +1,50 @@
+\begin{comment}
+  Homework solution of Calculus 2 - Chapter 4 Integral Application
+  Licensed under MIT license
+\end{comment}
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+
+\geometry{a4paper, margin=1in}
+
+\title{No. 9 - Aplikasi Integral}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Solusi Volume Benda Putar (Metode Kulit Tabung)}
+
+Diketahui daerah yang dibatasi oleh kurva $x = 3y^2$, sumbu-$x$ ($y=0$), dan garis $y = \sqrt{3}$ diputar mengelilingi sumbu-$x$. Karena pias diambil sejajar dengan sumbu putar, kita akan menggunakan metode kulit tabung (\textit{shell method}).
+
+\subsection*{1. Analisis Komponen Kulit Tabung}
+Saat diputar mengelilingi sumbu-$x$ dengan variabel integrasi $y$:
+\begin{itemize}
+  \item Jari-jari tabung ($r$) adalah jarak dari sumbu putar ke pias: $r = y$.
+  \item Tinggi tabung ($h$) adalah panjang pias secara horizontal: $h = x = 3y^2$.
+\end{itemize}
+
+\subsection*{2. Rumus Volume Metode Kulit Tabung}
+Volume ($V$) dihitung dengan mengintegralkan keliling dikali jari-jari dan tinggi terhadap $y$ dari $0$ hingga $\sqrt{3}$:
+\[ V = \int_{c}^{d} 2\pi \cdot (\text{jari-jari}) \cdot (\text{tinggi}) \, dy \]
+Substitusi nilai yang diketahui:
+\[ V = \int_{0}^{\sqrt{3}} 2\pi \cdot y \cdot (3y^2) \, dy \]
+\[ V = 2\pi \int_{0}^{\sqrt{3}} 3y^3 \, dy = 6\pi \int_{0}^{\sqrt{3}} y^3 \, dy \]
+
+\subsection*{3. Menghitung Integral}
+\begin{align*}
+V &= 6\pi \left[ \frac{1}{4} y^4 \right]_{0}^{\sqrt{3}} \\
+V &= \frac{6\pi}{4} \left[ (\sqrt{3})^4 - 0^4 \right] \\
+V &= \frac{3\pi}{2} [ 9 ] \\
+V &= \frac{27\pi}{2}
+\end{align*}
+
+\subsection*{Kesimpulan}
+Jadi, volume benda putar yang dihasilkan menggunakan metode kulit tabung adalah $\mathbf{\frac{27\pi}{2}}$ atau \textbf{13,5$\pi$ satuan kubik}.
+
+\end{document}
