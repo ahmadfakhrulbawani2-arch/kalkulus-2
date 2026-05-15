@@ -1,0 +1,67 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Titik Berat Busur Astroida}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Soal}
+Tentukan titik berat busur astroida yang berada di kuadran I dengan persamaan:
+\begin{equation}
+  x^{2/3} + y^{2/3} = a^{2/3}
+\end{equation}
+
+\section{Penyelesaian}
+
+\subsection{Turunan Pertama ($\frac{dy}{dx}$)}
+Turunkan persamaan secara implisit terhadap $x$:
+\begin{align*}
+  \frac{d}{dx}(x^{2/3} + y^{2/3}) &= \frac{d}{dx}(a^{2/3}) \\
+  \frac{2}{3}x^{-1/3} + \frac{2}{3}y^{-1/3} \frac{dy}{dx} &= 0 \\
+  \frac{dy}{dx} &= -\frac{x^{-1/3}}{y^{-1/3}} = -\left( \frac{y}{x} \right)^{1/3}
+\end{align*}
+
+\subsection{Elemen Panjang Busur ($ds$)}
+Gunakan rumus elemen panjang busur $ds = \sqrt{1 + \left(\frac{dy}{dx}\right)^2} dx$:
+\begin{align*}
+  ds &= \sqrt{1 + \left( -\frac{y^{1/3}}{x^{1/3}} \right)^2} dx \\
+  ds &= \sqrt{1 + \frac{y^{2/3}}{x^{2/3}}} dx = \sqrt{\frac{x^{2/3} + y^{2/3}}{x^{2/3}}} dx
+\end{align*}
+Substitusikan $x^{2/3} + y^{2/3} = a^{2/3}$:
+\begin{equation}
+  ds = \sqrt{\frac{a^{2/3}}{x^{2/3}}} dx = \frac{a^{1/3}}{x^{1/3}} dx = a^{1/3} x^{-1/3} dx
+\end{equation}
+
+\subsection{Panjang Busur Total ($L$)}
+Integralkan $ds$ dari $x = 0$ sampai $x = a$:
+\begin{align*}
+  L &= \int_{0}^{a} a^{1/3} x^{-1/3} dx \\
+  L &= a^{1/3} \left[ \frac{3}{2} x^{2/3} \right]_0^a = a^{1/3} \left( \frac{3}{2} a^{2/3} \right) = \frac{3}{2}a
+\end{align*}
+
+\subsection{Koordinat Titik Berat ($\bar{x}$)}
+\begin{align*}
+  \bar{x} &= \frac{1}{L} \int x \, ds \\
+  \bar{x} &= \frac{1}{\frac{3}{2}a} \int_{0}^{a} x (a^{1/3} x^{-1/3}) dx \\
+  \bar{x} &= \frac{2 a^{1/3}}{3a} \int_{0}^{a} x^{2/3} dx \\
+  \bar{x} &= \frac{2 a^{1/3}}{3a} \left[ \frac{3}{5} x^{5/3} \right]_0^a \\
+  \bar{x} &= \frac{2 a^{1/3}}{3a} \left( \frac{3}{5} a^{5/3} \right) = \frac{2}{5} \frac{a^2}{a} = \frac{2}{5}a
+\end{align*}
+
+Berdasarkan sifat simetri kurva terhadap garis $y = x$ di kuadran I, maka $\bar{y} = \bar{x}$.
+
+\section{Kesimpulan}
+Titik berat busur astroida di kuadran I adalah $(\bar{x}, \bar{y}) = \mathbf{\left(\frac{2}{5}a, \frac{2}{5}a\right)}$.
+
+\end{document}
