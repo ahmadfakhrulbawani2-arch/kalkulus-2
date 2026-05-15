@@ -1,0 +1,91 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Volume Benda Putar dengan Dalil Guldin I}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Soal}
+Tentukan volume benda putar yang terbentuk dari bidang datar yang dibatasi oleh kurva $y = 6 - 3x - x^2$ dan garis $x + y - 3 = 0$, jika diputar pada garis $y = 3 - x$ menggunakan Dalil Guldin I.
+
+\section{Penyelesaian}
+
+Dalil Guldin I menyatakan bahwa volume ($V$) benda putar adalah hasil kali antara luas daerah ($A$) dengan jarak yang ditempuh oleh titik berat daerah tersebut ($2\pi d$):
+\begin{equation}
+  V = 2\pi \cdot d \cdot A
+\end{equation}
+
+\subsection{Titik Potong dan Luas Daerah ($A$)}
+Persamaan kurva: $y_1 = 6 - 3x - x^2$ \\
+Persamaan garis: $y_2 = 3 - x$
+
+Titik potong:
+\begin{align*}
+  6 - 3x - x^2 &= 3 - x \\
+  -x^2 - 2x + 3 &= 0 \\
+  x^2 + 2x - 3 &= 0 \\
+  (x + 3)(x - 1) &= 0
+\end{align*}
+Batas integrasi adalah $x = -3$ dan $x = 1$.
+
+Luas daerah $A$:
+\begin{align*}
+  A &= \int_{-3}^{1} [(6 - 3x - x^2) - (3 - x)] \, dx \\
+  A &= \int_{-3}^{1} (-x^2 - 2x + 3) \, dx \\
+  A &= \left[ -\frac{1}{3}x^3 - x^2 + 3x \right]_{-3}^{1} \\
+  A &= \left( -\frac{1}{3} - 1 + 3 \right) - (9 - 9 - 9) = \frac{5}{3} + 9 = \frac{32}{3}
+\end{align*}
+
+\subsection{Koordinat Titik Berat $(\bar{x}, \bar{y})$}
+
+\subsubsection{Menghitung $\bar{x}$}
+\begin{align*}
+  \bar{x} &= \frac{1}{A} \int_{-3}^{1} x(-x^2 - 2x + 3) \, dx \\
+  \bar{x} &= \frac{3}{32} \int_{-3}^{1} (-x^3 - 2x^2 + 3x) \, dx \\
+  \bar{x} &= \frac{3}{32} \left[ -\frac{1}{4}x^4 - \frac{2}{3}x^3 + \frac{3}{2}x^2 \right]_{-3}^{1} \\
+  \bar{x} &= \frac{3}{32} \left[ \left( -\frac{1}{4} - \frac{2}{3} + \frac{3}{2} \right) - \left( -\frac{81}{4} + 18 + \frac{27}{2} \right) \right] = -1
+\end{align*}
+
+\subsubsection{Menghitung $\bar{y}$}
+Menggunakan rumus $\bar{y} = \frac{1}{2A} \int (y_1^2 - y_2^2) \, dx$:
+\begin{align*}
+  y_1^2 - y_2^2 &= (6 - 3x - x^2)^2 - (3 - x)^2 \\
+  &= (x^4 + 6x^3 - 3x^2 - 36x + 36) - (x^2 - 6x + 9) \\
+  &= x^4 + 6x^3 - 4x^2 - 30x + 27
+\end{align*}
+\begin{align*}
+  \bar{y} &= \frac{1}{2(32/3)} \int_{-3}^{1} (x^4 + 6x^3 - 4x^2 - 30x + 27) \, dx \\
+  \bar{y} &= \frac{3}{64} \left[ \frac{1}{5}x^5 + \frac{3}{2}x^4 - \frac{4}{3}x^3 - 15x^2 + 27x \right]_{-3}^{1} \\
+  \bar{y} &= \frac{3}{64} \left( \frac{1792}{15} \right) = \frac{28}{5} = 5,6
+\end{align*}
+Titik berat daerah adalah $Z(-1; 5,6)$.
+
+\subsection{Jarak Titik Berat ke Sumbu Putar ($d$)}
+Sumbu putar: $x + y - 3 = 0$.
+\begin{align*}
+  d &= \frac{|ax_1 + by_1 + c|}{\sqrt{a^2 + b^2}} \\
+  d &= \frac{|1(-1) + 1(5,6) - 3|}{\sqrt{1^2 + 1^2}} = \frac{1,6}{\sqrt{2}}
+\end{align*}
+
+\subsection{Volume Benda Putar ($V$)}
+\begin{align*}
+  V &= 2\pi \cdot d \cdot A \\
+  V &= 2\pi \cdot \frac{1,6}{\sqrt{2}} \cdot \frac{32}{3} \\
+  V &= \frac{102,4\pi}{3\sqrt{2}} = \frac{51,2\sqrt{2}\pi}{3} \approx 24,13\pi
+\end{align*}
+
+\section{Kesimpulan}
+Volume benda putar tersebut adalah $\mathbf{24,13\pi}$ satuan volume.
+
+\end{document}
