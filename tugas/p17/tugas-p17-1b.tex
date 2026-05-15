@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Titik Berat Kurva Homogen}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Soal}
+Tentukan titik berat kurva homogen yang dibatasi oleh persamaan:
+\begin{equation}
+  y^2 = 20x \quad \text{dan} \quad x^2 = 20y
+\end{equation}
+
+\section{Penyelesaian}
+
+\subsection{Titik Potong Kurva}
+Untuk mencari batas integrasi, kita samakan kedua persamaan:
+\begin{align*}
+  x^2 &= 20y \implies y = \frac{x^2}{20} \\
+  \left( \frac{x^2}{20} \right)^2 &= 20x \\
+  \frac{x^4}{400} &= 20x \\
+  x^4 - 8000x &= 0 \\
+  x(x^3 - 8000) &= 0
+\end{align*}
+Diperoleh akar-akar:
+\begin{itemize}
+  \item $x_1 = 0 \implies y_1 = 0$
+  \item $x_2 = \sqrt[3]{8000} = 20 \implies y_2 = 20$
+\end{itemize}
+Titik potong berada di $(0,0)$ dan $(20,20)$.
+
+\subsection{Luas Daerah ($A$)}
+Luas daerah di antara kurva atas $f(x) = \sqrt{20x}$ dan kurva bawah $g(x) = \frac{x^2}{20}$ adalah:
+\begin{align*}
+  A &= \int_{0}^{20} \left( \sqrt{20}x^{1/2} - \frac{x^2}{20} \right) dx \\
+  A &= \left[ \frac{2}{3} \cdot \sqrt{20} \cdot x^{3/2} - \frac{x^3}{60} \right]_0^{20} \\
+  A &= \left( \frac{2}{3} \sqrt{20} (20\sqrt{20}) - \frac{8000}{60} \right) - 0 \\
+  A &= \frac{800}{3} - \frac{400}{3} = \frac{400}{3}
+\end{align*}
+
+\subsection{Koordinat Titik Berat $(\bar{x}, \bar{y})$}
+Karena kurva simetris terhadap garis $y = x$, maka $\bar{x} = \bar{y}$. Mari kita hitung $\bar{x}$:
+\begin{align*}
+  \bar{x} &= \frac{1}{A} \int_{0}^{20} x \left( \sqrt{20}x^{1/2} - \frac{x^2}{20} \right) dx \\
+  \bar{x} &= \frac{3}{400} \int_{0}^{20} \left( \sqrt{20}x^{3/2} - \frac{x^3}{20} \right) dx \\
+  \bar{x} &= \frac{3}{400} \left[ \frac{2}{5} \sqrt{20} x^{5/2} - \frac{x^4}{80} \right]_0^{20} \\
+  \bar{x} &= \frac{3}{400} \left( \frac{2}{5} \cdot 8000 - \frac{160000}{80} \right) \\
+  \bar{x} &= \frac{3}{400} (3200 - 2000) = \frac{3}{400} (1200) = 9
+\end{align*}
+
+Berdasarkan sifat simetri:
+\begin{equation*}
+  \bar{y} = \bar{x} = 9
+\end{equation*}
+
+\section{Kesimpulan}
+Titik berat kurva homogen tersebut adalah $(\bar{x}, \bar{y}) = \mathbf{(9, 9)}$.
+
+\end{document}
