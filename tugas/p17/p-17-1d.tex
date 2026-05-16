@@ -1,0 +1,138 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Titik Berat Bidang}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+Diketahui sebuah daerah bidang datar yang dibatasi oleh dua kurva:
+\begin{align*}
+  y_1 &= 6 - 3x - x^2 \quad \text{(Parabola)} \\
+  y_2 &= 3 - x \quad \text{(Garis Lurus)}
+\end{align*}
+
+Akan dicari koordinat titik berat bidang tersebut, yaitu $(\bar{x}, \bar{y})$.
+
+\subsection*{1. Menentukan Batas Integral (Titik Potong)}
+Untuk mencari batas integral, kita mencari titik potong antara kedua kurva dengan menyamakannya ($y_1 = y_2$):
+\[
+  6 - 3x - x^2 = 3 - x
+\]
+\[
+  x^2 + 2x - 3 = 0
+\]
+Faktorkan persamaan kuadrat di atas:
+\[
+  (x + 3)(x - 1) = 0
+\]
+Diperoleh batas integral adalah $x = -3$ (batas bawah $a$) dan $x = 1$ (batas atas $b$).
+
+\paragraph{Uji Kurva Atas dan Bawah:}
+Jika kita ambil sampel nilai $x = 0$ pada rentang $[-3, 1]$, maka $y_1 = 6$ dan $y_2 = 3$. Karena $y_1 > y_2$, maka kurva atas adalah $y_{\text{atas}} = 6 - 3x - x^2$ dan kurva bawah adalah $y_{\text{bawah}} = 3 - x$.
+
+\subsection*{2. Rumus Utama Titik Berat ($\bar{x}, \bar{y}$)}
+Koordinat centroid untuk daerah yang dibatasi oleh dua kurva secara umum ditentukan oleh rasio Momen Statis terhadap Luas Bidang ($A$):
+\[
+  \bar{x} = \frac{M_y}{A} \quad \text{dan} \quad \bar{y} = \frac{M_x}{A}
+\]
+
+\subsection*{3. Menghitung Luas Bidang ($A$)}
+Rumus untuk mencari luas bidang di antara dua kurva adalah:
+\[
+  A = \int_{a}^{b} (y_{\text{atas}} - y_{\text{bawah}}) \, dx
+\]
+
+Substitusikan fungsi dan batas yang diketahui:
+\[
+  A = \int_{-3}^{1} \left( (6 - 3x - x^2) - (3 - x) \right) \, dx = \int_{-3}^{1} (3 - 2x - x^2) \, dx
+\]
+Integralkan fungsi tersebut:
+\[
+  A = \left[ 3x - x^2 - \frac{1}{3}x^3 \right]_{-3}^{1}
+\]
+Substitusikan batas atas dan batas bawah:
+\[
+  A = \left( 3(1) - (1)^2 - \frac{1}{3}(1)^3 \right) - \left( 3(-3) - (-3)^2 - \frac{1}{3}(-3)^3 \right)
+\]
+\[
+  A = \left( \frac{5}{3} \right) - (-9) = \frac{32}{3}
+\]
+
+\subsection*{4. Menghitung Momen Statis terhadap Sumbu-y ($M_y$) dan Nilai $\bar{x}$}
+Rumus momen statis luasan terhadap sumbu-y adalah:
+\[
+  M_y = \int_{a}^{b} x \cdot (y_{\text{atas}} - y_{\text{bawah}}) \, dx
+\]
+
+Substitusikan komponen ke dalam rumus:
+\[
+  M_y = \int_{-3}^{1} x(3 - 2x - x^2) \, dx = \int_{-3}^{1} (3x - 2x^2 - x^3) \, dx
+\]
+Integralkan fungsi tersebut:
+\[
+  M_y = \left[ \frac{3}{2}x^2 - \frac{2}{3}x^3 - \frac{1}{4}x^4 \right]_{-3}^{1}
+\]
+Substitusikan nilai batasnya:
+\begin{itemize}
+  \item Batas atas ($x=1$): $\frac{3}{2} - \frac{2}{3} - \frac{1}{4} = \frac{7}{12}$
+  \item Batas bawah ($x=-3$): $\frac{27}{2} + 18 - \frac{81}{4} = \frac{135}{12}$
+\end{itemize}
+\[
+  M_y = \frac{7}{12} - \frac{135}{12} = -\frac{128}{12} = -\frac{32}{3}
+\]
+
+Maka koordinat $\bar{x}$ adalah:
+\[
+  \bar{x} = \frac{M_y}{A} = \frac{-32/3}{32/3} = -1
+\]
+
+\subsection*{5. Menghitung Momen Statis terhadap Sumbu-x ($M_x$) dan Nilai $\bar{y}$}
+Rumus momen statis luasan terhadap sumbu-x ditentukan oleh tinggi rata-rata elemen persegi panjang pias:
+\[
+  M_x = \frac{1}{2} \int_{a}^{b} \left( y_{\text{atas}}^2 - y_{\text{bawah}}^2 \right) \, dx
+\]
+
+Terlebih dahulu jabarkan fungsi di dalam integral:
+\[
+  y_{\text{atas}}^2 - y_{\text{bawah}}^2 = (6 - 3x - x^2)^2 - (3 - x)^2 = x^4 + 6x^3 - 4x^2 - 30x + 27
+\]
+Substitusikan ke dalam integral:
+\[
+  M_x = \frac{1}{2} \int_{-3}^{1} (x^4 + 6x^3 - 4x^2 - 30x + 27) \, dx
+\]
+\[
+  M_x = \frac{1}{2} \left[ \frac{1}{5}x^5 + \frac{3}{2}x^4 - \frac{4}{3}x^3 - 15x^2 + 27x \right]_{-3}^{1}
+\]
+Substitusikan nilai batasnya:
+\begin{itemize}
+  \item Batas atas ($x=1$): $\frac{1}{2} \left( \frac{1}{5} + \frac{3}{2} - \frac{4}{3} - 15 + 27 \right) = \frac{371}{60}$
+  \item Batas bawah ($x=-3$): $\frac{1}{2} \left( -\frac{243}{5} + \frac{243}{2} + 36 - 135 - 81 \right) = -\frac{3213}{60}$
+\end{itemize}
+\[
+  M_x = \frac{371}{60} - \left( -\frac{3213}{60} \right) = \frac{3584}{60} = \frac{896}{15}
+\]
+
+Maka koordinat $\bar{y}$ adalah:
+\[
+  \bar{y} = \frac{M_x}{A} = \frac{896/15}{32/3} = \frac{896}{15} \cdot \frac{3}{32} = \frac{28}{5} = 5.6
+\]
+
+\subsection*{Kesimpulan}
+Titik berat dari bidang luasan yang dibatasi oleh kedua kurva tersebut terletak pada koordinat:
+\[
+  (\bar{x}, \, \bar{y}) = \left(-1, \, \frac{28}{5}\right) = (-1, \, 5.6)
+\]
+
+\end{document}
