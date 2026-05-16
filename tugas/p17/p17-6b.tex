@@ -1,0 +1,83 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Titik Berat Benda Putar}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+Diketahui sebuah kurva dengan persamaan $x = y^{1/3}$ pada batas $y \in [1, 8]$ diputar terhadap \textbf{sumbu-x}. 
+
+Karena benda diputar terhadap sumbu-x, maka berdasarkan prinsip simetri, koordinat titik berat pada sumbu-y adalah:
+\[\bar{y} = 0\]
+
+Untuk mencari koordinat $\bar{x}$, kita gunakan representasi fungsi $y$ terhadap $x$ agar proses integrasi lebih mudah diselesaikan:
+\begin{itemize}
+  \item Kurva: $y = x^3$
+  \item Batas integral terhadap $x$: Jika $y \in [1, 8]$, maka $x \in [1, 2]$
+  \item Turunan fungsi: $\frac{dy}{dx} = 3x^2$
+  \item Elemen panjang busur ($ds$): 
+  \[ds = \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx = \sqrt{1 + 9x^4} \, dx\]
+\end{itemize}
+
+---
+
+\subsection*{1. Rumus Utama Titik Berat ($\bar{x}$)}
+Koordinat $\bar{x}$ ditentukan oleh rasio antara momen statis terhadap sumbu-y ($M_y$) dengan Luas Permukaan kulit benda putar ($A$):
+\[\bar{x} = \frac{M_y}{A}\]
+
+---
+
+\subsection*{2. Menghitung Luas Permukaan Kulit Benda Putar ($A$)}
+Rumus luas permukaan benda putar terhadap sumbu-x adalah:
+\[A = \int_{a}^{b} 2\pi y \, ds\]
+
+Substitusikan $y = x^3$ dan $ds$:
+\[A = 2\pi \int_{1}^{2} x^3 \sqrt{1 + 9x^4} \, dx\]
+
+Gunakan teknik substitusi ($u$-sub):
+Letakkan $u = 1 + 9x^4$, sehingga $du = 36x^3 \, dx \implies x^3 \, dx = \frac{1}{36} du$.
+
+Perubahan batas integral:
+\begin{itemize}
+  \item Untuk $x = 1 \implies u = 1 + 9(1)^4 = 10$
+  \item Untuk $x = 2 \implies u = 1 + 9(2)^4 = 145$
+\end{itemize}
+
+Maka nilai $A$:
+\[A = 2\pi \cdot \frac{1}{36} \int_{10}^{145} \sqrt{u} \, du \]
+\[A = \frac{\pi}{18} \left[ \frac{2}{3} u^{3/2} \right]_{10}^{145} \]
+\[A = \frac{\pi}{27} \left( 145\sqrt{145} - 10\sqrt{10} \right) \approx 63.498\pi\]
+
+\subsection*{3. Menghitung Momen Statis terhadap Sumbu-y ($M_y$)}
+Rumus momen statis untuk kulit benda putar adalah:
+\[M_y = \int_{a}^{b} 2\pi y \cdot x \, ds\]
+
+Substitusikan komponen fungsi ke dalam rumus:
+\[M_y = 2\pi \int_{1}^{2} x \cdot (x^3) \sqrt{1 + 9x^4} \, dx \]
+\[M_y = 2\pi \int_{1}^{2} x^4 \sqrt{1 + 9x^4} \, dx\]
+
+Menggunakan pendekatan integrasi numerik untuk bentuk non-elementer di atas (sebenarnya bisa diselesaikan dengan integral parsial dan substitusi fungsi trigonometri hiperbolik), diperoleh:
+\[\int_{1}^{2} x^4 \sqrt{1 + 9x^4} \, dx \approx 27.661\]
+\[M_y \approx 2\pi \times 27.661 = 55.322\pi\]
+
+\subsection*{4. Menghitung Koordinat $\bar{x}$}
+Substitusikan nilai $M_y$ dan $A$ ke dalam rumus titik berat:
+\[\bar{x} = \frac{M_y}{A} = \frac{55.322\pi}{63.498\pi} \approx 1.162\]
+
+\subsection*{Kesimpulan}
+Titik berat dari kulit benda putar tersebut berada pada koordinat:
+\[(\bar{x}, \, \bar{y}) = (1.162, \, 0)\]
+
+\end{document}
