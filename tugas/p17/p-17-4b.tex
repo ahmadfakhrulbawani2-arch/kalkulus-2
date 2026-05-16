@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Titik Berat Benda Putar}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Soal}
+Tentukan titik berat benda yang dibatasi
+\begin{equation}
+  y = 4 - x^2
+\end{equation}
+diputar di sumbu-x di kuadran 1.
+
+\section{Penyelesaian}
+
+\subsection*{2.1 Menentukan Batas Integrasi dan Luas Daerah ($A$)}
+Batas untuk $x$ adalah dari $x = 0$ hingga titik potong dengan sumbu-X ($y = 0$):
+\[ 4 - x^2 = 0 \implies x^2 = 4 \implies x = 2 \]
+Jadi, batas integrasi adalah $x \in [0, 2]$.
+
+Luas daerah $A$ dihitung dengan:
+\[ A = \int_{0}^{2} y \, dx = \int_{0}^{2} (4 - x^2) \, dx \]
+\[ A = \left[ 4x - \frac{1}{3}x^3 \right]_{0}^{2} = \left( 4(2) - \frac{8}{3} \right) - 0 = 8 - \frac{8}{3} = \frac{16}{3} \]
+
+\subsection*{2.2 Menghitung Koordinat $\bar{x}$}
+Rumus untuk momen pertama terhadap sumbu-Y ($M_y$) dan koordinat $\bar{x}$ adalah:
+\[ M_y = \int_{0}^{2} x \cdot y \, dx = \int_{0}^{2} x(4 - x^2) \, dx = \int_{0}^{2} (4x - x^3) \, dx \]
+\[ M_y = \left[ 2x^2 - \frac{1}{4}x^4 \right]_{0}^{2} = \left( 2(2)^2 - \frac{1}{4}(2)^4 \right) - 0 = 8 - 4 = 4 \]
+
+Maka, nilai $\bar{x}$ adalah:
+\[ \bar{x} = \frac{M_y}{A} = \frac{4}{\frac{16}{3}} = 4 \times \frac{3}{16} = \frac{3}{4} = 0.75 \]
+
+\subsection*{2.3 Menghitung Koordinat $\bar{y}$}
+Rumus untuk momen pertama terhadap sumbu-X ($M_x$) dan koordinat $\bar{y}$ adalah:
+\[ M_x = \frac{1}{2} \int_{0}^{2} y^2 \, dx = \frac{1}{2} \int_{0}^{2} (4 - x^2)^2 \, dx \]
+\[ M_x = \frac{1}{2} \int_{0}^{2} (16 - 8x^2 + x^4) \, dx \]
+\[ M_x = \frac{1}{2} \left[ 16x - \frac{8}{3}x^3 + \frac{1}{5}x^5 \right]_{0}^{2} \]
+\[ M_x = \frac{1}{2} \left( 16(2) - \frac{8}{3}(2)^3 + \frac{1}{5}(2)^5 \right) = \frac{1}{2} \left( 32 - \frac{64}{3} + \frac{32}{5} \right) \]
+\[ M_x = \frac{1}{2} \left( \frac{480 - 320 + 96}{15} \right) = \frac{1}{2} \left( \frac{256}{15} \right) = \frac{128}{15} \]
+
+Maka, nilai $\bar{y}$ adalah:
+\[ \bar{y} = \frac{M_x}{A} = \frac{\frac{128}{15}}{\frac{16}{3}} = \frac{128}{15} \times \frac{3}{16} = \frac{128}{16} \times \frac{3}{15} = 8 \times \frac{1}{5} = \frac{8}{5} = 1.6 \]
+
+\subsection*{Kesimpulan Bukti Nilai $\bar{x}$ dan $\bar{y}$}
+Dari hasil perhitungan di atas, kita mendapatkan:
+\[ \bar{x} = \frac{3}{4} = 0.75 \]
+\[ \bar{y} = \frac{8}{5} = 1.6 \]
+Dengan demikian, terbukti secara matematis bahwa untuk daerah yang dibatasi oleh $y = 4 - x^2$ di kuadran 1:
+\[ \bar{y} \neq \bar{x} \quad \left(1.6 \neq 0.75\right) \]
+
+\end{document}
