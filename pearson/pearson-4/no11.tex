@@ -1,0 +1,50 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Volume Benda dengan Metode Shell}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Diketahui:
+\begin{itemize}
+  \item Fungsi pembatas: $x = 4 - 2y^2$
+  \item Batas-batas: $y = 0$ dan $y = \sqrt{2}$
+  \item Sumbu putar: Sumbu-$x$
+\end{itemize}
+Tentukan volumenya
+
+\subsection*{1. Rumus Umum}
+Karena diputar mengelilingi sumbu-$x$, fungsi diintegrasikan terhadap $y$:
+\begin{equation*}
+  V = 2\pi \int_{c}^{d} (\text{jari-jari}) \cdot (\text{tinggi}) \, dy
+\end{equation*}
+Dimana jari-jari tabung adalah $y$ dan tinggi tabung adalah $x = 4 - 2y^2$.
+
+\subsection*{2. Solusi Integrasi}
+Substitusikan komponen yang diketahui ke dalam rumus:
+\begin{align*}
+  V &= 2\pi \int_{0}^{\sqrt{2}} y(4 - 2y^2) \, dy \\
+  V &= 2\pi \int_{0}^{\sqrt{2}} (4y - 2y^3) \, dy \\
+  V &= 2\pi \left[ 2y^2 - \frac{1}{2}y^4 \right]_{0}^{\sqrt{2}} \\
+  V &= 2\pi \left( \left[ 2(\sqrt{2})^2 - \frac{1}{2}(\sqrt{2})^4 \right] - 0 \right) \\
+  V &= 2\pi \left( 2(2) - \frac{1}{2}(4) \right) \\
+  V &= 2\pi (4 - 2) \\
+  V &= 4\pi
+\end{align*}
+
+Jadi, volume benda putar tersebut adalah \textbf{$4\pi$ satuan volume}.
+
+\end{document}
