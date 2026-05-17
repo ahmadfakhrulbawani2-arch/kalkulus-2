@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Volume Benda dengan Metode Shell}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Diketahui:
+\begin{itemize}
+  \item Kurva pembatas: $y = 256 - x^2$ dan $y = 3x^2$
+  \item Batas wilayah: $x = 0$ dan $x \ge 0$
+  \item Sumbu putar: Sumbu-$y$
+\end{itemize}
+Tentukan volumenya menggunakan metode shell!
+
+\subsection*{1. Menentukan Batas Integrasi}
+Batas bawah daerah adalah $x = 0$. Batas atas dicari melalui titik potong antara kedua kurva ($y_1 = y_2$):
+\begin{align*}
+  256 - x^2 &= 3x^2 \\
+  256 &= 4x^2 \\
+  x^2 &= 64 \\
+  x &= \pm 8
+\end{align*}
+Karena disyaratkan $x \ge 0$, maka batas atas integrasi yang digunakan adalah $x = 8$. Jadi, daerah tersebut diintegrasikan pada interval $[0, 8]$.
+
+\subsection*{2. Rumus Umum}
+Karena diputar mengelilingi sumbu-$y$, fungsi diintegrasikan terhadap $x$:
+\begin{equation*}
+  V = 2\pi \int_{a}^{b} (\text{jari-jari}) \cdot (\text{tinggi}) \, dx
+\end{equation*}
+Dimana:
+\begin{itemize}
+  \item Jari-jari tabung adalah $x$.
+  \item Tinggi tabung adalah selisih kurva atas dan kurva bawah: \\
+        $\text{tinggi} = (256 - x^2) - 3x^2 = 256 - 4x^2$.
+\end{itemize}
+
+\subsection*{3. Solusi Integrasi}
+Substitusikan komponen yang diketahui ke dalam rumus:
+\begin{align*}
+  V &= 2\pi \int_{0}^{8} x \cdot (256 - 4x^2) \, dx \\
+  V &= 2\pi \int_{0}^{8} (256x - 4x^3) \, dx \\
+  V &= 2\pi \left[ 128x^2 - x^4 \right]_{0}^{8} \\
+  V &= 2\pi \left( \left[ 128(8)^2 - (8)^4 \right] - \left[ 128(0)^2 - (0)^4 \right] \right) \\
+  V &= 2\pi \left( 128(64) - 4096 \right) \\
+  V &= 2\pi (8192 - 4096) \\
+  V &= 2\pi (4096) \\
+  V &= 8192\pi
+\end{align*}
+
+Jadi, volume benda putar tersebut adalah \textbf{$8192\pi$ satuan volume}.
+
+\end{document}
