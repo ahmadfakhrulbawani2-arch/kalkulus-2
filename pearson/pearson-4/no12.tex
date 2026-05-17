@@ -1,0 +1,66 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Penyelesaian Volume Benda dengan Metode Shell}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Diketahui:
+\begin{itemize}
+  \item Fungsi pembatas: $y = 3\sqrt{x^2 + 1}$
+  \item Batas-batas: $x = 0$ dan $x = \sqrt{15}$
+  \item Pias: Sejajar sumbu-$y$ (diintegrasikan terhadap $x$)
+  \item Sumbu putar: Sumbu-$y$
+\end{itemize}
+Tentukan volumenya menggunakan metode shell!
+
+\subsection*{1. Rumus Umum}
+Karena pias sejajar sumbu-$y$ dan diputar mengelilingi sumbu-$y$, fungsi diintegrasikan terhadap $x$:
+\begin{equation*}
+  V = 2\pi \int_{a}^{b} (\text{jari-jari}) \cdot (\text{tinggi}) \, dx
+\end{equation*}
+Dimana jari-jari tabung (jarak pias ke sumbu putar) adalah $x$ dan tinggi tabung adalah $y = 3\sqrt{x^2 + 1}$.
+
+\subsection*{2. Solusi Integrasi}
+Substitusikan komponen yang diketahui ke dalam rumus:
+\begin{align*}
+  V &= 2\pi \int_{0}^{\sqrt{15}} x \cdot \left(3\sqrt{x^2 + 1}\right) \, dx \\
+  V &= 6\pi \int_{0}^{\sqrt{15}} x(x^2 + 1)^{\frac{1}{2}} \, dx
+\end{align*}
+
+Gunakan metode substitusi integral:
+\begin{align*}
+  \text{Misalkan: } & u = x^2 + 1 \implies du = 2x \, dx \implies x \, dx = \frac{1}{2} \, du \\
+  \text{Batas baru: } & \text{Untuk } x = 0 \implies u = 0^2 + 1 = 1 \\
+  & \text{Untuk } x = \sqrt{15} \implies u = (\sqrt{15})^2 + 1 = 16
+\end{align*}
+
+Substitusikan variabel baru $u$ ke dalam integral:
+\begin{align*}
+  V &= 6\pi \int_{1}^{16} u^{\frac{1}{2}} \cdot \left(\frac{1}{2} \, du\right) \\
+  V &= 3\pi \int_{1}^{16} u^{\frac{1}{2}} \, du \\
+  V &= 3\pi \left[ \frac{2}{3}u^{\frac{3}{2}} \right]_{1}^{16} \\
+  V &= 2\pi \left[ u\sqrt{u} \right]_{1}^{16} \\
+  V &= 2\pi \left( \left[ 16\sqrt{16} \right] - \left[ 1\sqrt{1} \right] \right) \\
+  V &= 2\pi (16 \cdot 4 - 1) \\
+  V &= 2\pi (64 - 1) \\
+  V &= 2\pi (63) \\
+  V &= 126\pi
+\end{align*}
+
+Jadi, volume benda putar tersebut adalah \textbf{$126\pi$ satuan volume}.
+
+\end{document}
