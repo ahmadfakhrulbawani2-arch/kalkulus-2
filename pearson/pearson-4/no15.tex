@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Panjang Busur Kurva}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the length of the following curve:
+\begin{equation*}
+  y = 2x^{\frac{3}{2}}, \quad \text{dari } x = 0 \text{ sampai } x = 3
+\end{equation*}
+
+\subsection*{1. Rumus Umum}
+Rumus untuk menghitung panjang busur (arc length) suatu kurva yang mulus dari $x = a$ sampai $x = b$ adalah:
+\begin{equation*}
+  L = \int_{a}^{b} \sqrt{1 + \left(\frac{dy}{dx}\right)^2} \, dx
+\end{equation*}
+
+\subsection*{2. Menentukan Turunan Fungsi}
+Pertama, kita cari turunan pertama dari fungsi $y = 2x^{\frac{3}{2}}$ terhadap $x$:
+\begin{align*}
+  \frac{dy}{dx} &= 2 \cdot \frac{3}{2}x^{\frac{1}{2}} \\
+  \frac{dy}{dx} &= 3\sqrt{x}
+\end{align*}
+
+Selanjutnya, kuadratkan hasil turunan tersebut:
+\begin{align*}
+  \left(\frac{dy}{dx}\right)^2 &= (3\sqrt{x})^2 \\
+  \left(\frac{dy}{dx}\right)^2 &= 9x
+\end{align*}
+
+\subsection*{3. Solusi Integrasi}
+Substitusikan komponen yang telah didapat ke dalam rumus panjang busur dengan batas $a = 0$ dan $b = 3$:
+\begin{equation*}
+  L = \int_{0}^{3} \sqrt{1 + 9x} \, dx
+\end{equation*}
+
+Gunakan metode substitusi untuk menyelesaikan integral tersebut:
+\begin{align*}
+  \text{Misalkan: } & u = 1 + 9x \implies du = 9 \, dx \implies dx = \frac{1}{9} \, du \\
+  \text{Batas baru: } & \text{Untuk } x = 0 \implies u = 1 + 9(0) = 1 \\
+  & \text{Untuk } x = 3 \implies u = 1 + 9(3) = 28
+\end{align*}
+
+Substitusikan variabel $u$ ke dalam bentuk integral:
+\begin{align*}
+  L &= \int_{1}^{28} \sqrt{u} \cdot \left(\frac{1}{9} \, du\right) \\
+  L &= \frac{1}{9} \int_{1}^{28} u^{\frac{1}{2}} \, du \\
+  L &= \frac{1}{9} \left[ \frac{2}{3}u^{\frac{3}{2}} \right]_{1}^{28} \\
+  L &= \frac{2}{27} \left[ u\sqrt{u} \right]_{1}^{28} \\
+  L &= \frac{2}{27} \left( 28\sqrt{28} - 1\sqrt{1} \right)
+\end{align*}
+
+Karena $\sqrt{28} = \sqrt{4 \cdot 7} = 2\sqrt{7}$, maka $28\sqrt{28} = 28 \cdot 2\sqrt{7} = 56\sqrt{7}$. Bentuk akhirnya menjadi:
+\begin{equation*}
+  L = \frac{2}{27} \left( 56\sqrt{7} - 1 \right)
+\end{equation*}
+
+Jadi, panjang busur kurva tersebut adalah \textbf{$\dfrac{2}{27} \left( 56\sqrt{7} - 1 \right)$ satuan panjang}.
+
+\end{document}
