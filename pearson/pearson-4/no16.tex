@@ -1,0 +1,89 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Panjang Busur Kurva}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the length of the following curve:
+\begin{equation*}
+  x = \frac{y^3}{15} + \frac{5}{4y}, \quad \text{untuk } 3 \le y \le 5
+\end{equation*}
+
+\subsection*{1. Rumus Umum}
+Rumus untuk menghitung panjang busur (arc length) fungsi dalam variabel $y$ dari $y = c$ sampai $y = d$ adalah:
+\begin{equation*}
+  L = \int_{c}^{d} \sqrt{1 + \left(\frac{dx}{dy}\right)^2} \, dy
+\end{equation*}
+
+\subsection*{2. Menentukan Turunan Fungsi}
+Mari tulis ulang fungsinya agar lebih mudah diturunkan:
+\begin{equation*}
+  x = \frac{1}{15}y^3 + \frac{5}{4}y^{-1}
+\end{equation*}
+
+Cari turunan pertama $x$ terhadap $y$:
+\begin{align*}
+  \frac{dx}{dy} &= \frac{1}{15}(3y^2) + \frac{5}{4}(-1y^{-2}) \\
+  \frac{dx}{dy} &= \frac{y^2}{5} - \frac{5}{4y^2}
+\end{align*}
+
+Selanjutnya, cari bentuk dari $1 + \left(\frac{dx}{dy}\right)^2$:
+\begin{align*}
+  \left(\frac{dx}{dy}\right)^2 &= \left(\frac{y^2}{5} - \frac{5}{4y^2}\right)^2 \\
+  &= \frac{y^4}{25} - 2\left(\frac{y^2}{5}\right)\left(\frac{5}{4y^2}\right) + \frac{25}{16y^4} \\
+  &= \frac{y^4}{25} - \frac{1}{2} + \frac{25}{16y^4}
+\end{align*}
+
+Tambahkan dengan 1 untuk dimasukkan ke dalam akar:
+\begin{align*}
+  1 + \left(\frac{dx}{dy}\right)^2 &= 1 + \frac{y^4}{25} - \frac{1}{2} + \frac{25}{16y^4} \\
+  &= \frac{y^4}{25} + \frac{1}{2} + \frac{25}{16y^4}
+\end{align*}
+
+Perhatikan bahwa bentuk di atas merupakan kuadrat sempurna, yaitu:
+\begin{equation*}
+  \frac{y^4}{25} + \frac{1}{2} + \frac{25}{16y^4} = \left(\frac{y^2}{5} + \frac{5}{4y^2}\right)^2
+\end{equation*}
+
+\subsection*{3. Solusi Integrasi}
+Substitusikan ke dalam rumus panjang busur:
+\begin{align*}
+  L &= \int_{3}^{5} \sqrt{\left(\frac{y^2}{5} + \frac{5}{4y^2}\right)^2} \, dy \\
+  L &= \int_{3}^{5} \left(\frac{y^2}{5} + \frac{5}{4y^2}\right) \, dy \\
+  L &= \int_{3}^{5} \left(\frac{1}{5}y^2 + \frac{5}{4}y^{-2}\right) \, dy
+\end{align*}
+
+Lakukan integrasi:
+\begin{align*}
+  L &= \left[ \frac{1}{15}y^3 - \frac{5}{4y} \right]_{3}^{5} \\
+  L &= \left( \left[ \frac{5^3}{15} - \frac{5}{4(5)} \right] - \left[ \frac{3^3}{15} - \frac{5}{4(3)} \right] \right) \\
+  L &= \left( \left[ \frac{125}{15} - \frac{1}{4} \right] - \left[ \frac{27}{15} - \frac{5}{12} \right] \right) \\
+  L &= \left( \frac{25}{3} - \frac{1}{4} \right) - \left( \frac{9}{5} - \frac{5}{12} \right) \\
+  L &= \left( \frac{100 - 3}{12} \right) - \left( \frac{108 - 25}{60} \right) \\
+  L &= \frac{97}{12} - \frac{83}{60}
+\end{align*}
+
+Samakan penyebutnya menjadi 60:
+\begin{align*}
+  L &= \frac{485}{60} - \frac{83}{60} \\
+  L &= \frac{402}{60} \\
+  L &= \frac{67}{10} = 6.7
+\end{align*}
+
+Jadi, panjang busur kurva tersebut adalah \textbf{$\dfrac{67}{10}$ atau $6.7$ satuan panjang}.
+
+\end{document}
