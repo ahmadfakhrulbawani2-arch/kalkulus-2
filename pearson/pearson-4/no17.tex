@@ -1,0 +1,96 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Panjang Busur Kurva}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the length of the following curve:
+\begin{equation*}
+  x = \frac{y^4}{4} + \frac{1}{8y^2}, \quad \text{dari } y = 1 \text{ sampai } y = 3
+\end{equation*}
+
+\subsection*{1. Rumus Umum}
+Rumus untuk menghitung panjang busur (arc length) fungsi dalam variabel $y$ dari $y = c$ sampai $y = d$ adalah:
+\begin{equation*}
+  L = \int_{c}^{d} \sqrt{1 + \left(\frac{dx}{dy}\right)^2} \, dy
+\end{equation*}
+
+\subsection*{2. Menentukan Turunan Fungsi}
+Mari tulis ulang fungsinya agar lebih mudah diturunkan:
+\begin{equation*}
+  x = \frac{1}{4}y^4 + \frac{1}{8}y^{-2}
+\end{equation}
+
+Cari turunan pertama $x$ terhadap $y$:
+\begin{align*}
+  \frac{dx}{dy} &= \frac{1}{4}(4y^3) + \frac{1}{8}(-2y^{-3}) \\
+  \frac{dx}{dy} &= y^3 - \frac{1}{4y^3}
+\end{align*}
+
+Selanjutnya, kuadratkan hasil turunan tersebut:
+\begin{align*}
+  \left(\frac{dx}{dy}\right)^2 &= \left(y^3 - \frac{1}{4y^3}\right)^2 \\
+  &= y^6 - 2(y^3)\left(\frac{1}{4y^3}\right) + \frac{1}{16y^6} \\
+  &= y^6 - \frac{1}{2} + \frac{1}{16y^6}
+\end{align*}
+
+Tambahkan dengan 1 untuk dimasukkan ke dalam akar:
+\begin{align*}
+  1 + \left(\frac{dx}{dy}\right)^2 &= 1 + y^6 - \frac{1}{2} + \frac{1}{16y^6} \\
+  &= y^6 + \frac{1}{2} + \frac{1}{16y^6}
+\end{align*}
+
+Perhatikan bahwa bentuk di atas merupakan kuadrat sempurna, yaitu:
+\begin{equation*}
+  y^6 + \frac{1}{2} + \frac{1}{16y^6} = \left(y^3 + \frac{1}{4y^3}\right)^2
+\end{equation*}
+
+\subsection*{3. Solusi Integrasi}
+Substitusikan ke dalam rumus panjang busur dengan batas $c = 1$ dan $d = 3$:
+\begin{align*}
+  L &= \int_{1}^{3} \sqrt{\left(y^3 + \frac{1}{4y^3}\right)^2} \, dy \\
+  L &= \int_{1}^{3} \left(y^3 + \frac{1}{4y^3}\right) \, dy \\
+  L &= \int_{1}^{3} \left(y^3 + \frac{1}{4}y^{-3}\right) \, dy
+\end{align*}
+
+Lakukan integrasi:
+\begin{align*}
+  L &= \left[ \frac{1}{4}y^4 - \frac{1}{8y^2} \right]_{1}^{3} \\
+  L &= \left( \left[ \frac{3^4}{4} - \frac{1}{8(3)^2} \right] - \left[ \frac{1^4}{4} - \frac{1}{8(1)^2} \right] \right) \\
+  L &= \left( \left[ \frac{81}{4} - \frac{1}{72} \right] - \left[ \frac{1}{4} - \frac{1}{8} \right] \right)
+\end{align*}
+
+Samakan penyebut untuk mempermudah perhitungan:
+\begin{align*}
+  L &= \left( \frac{1458}{72} - \frac{1}{72} \right) - \left( \frac{2}{8} - \frac{1}{8} \right) \\
+  L &= \frac{1457}{72} - \frac{1}{8}
+\end{align*}
+
+Samakan penyebut kedua pecahan menjadi 72:
+\begin{align*}
+  L &= \frac{1457}{72} - \frac{9}{72} \\
+  L &= \frac{1448}{72}
+\end{align*}
+
+Sederhanakan dengan membagi pembilang dan penyebut dengan 8:
+\begin{equation*}
+  L = \frac{181}{9} = 20\frac{1}{9}
+\end{equation*}
+
+Jadi, panjang busur kurva tersebut adalah \textbf{$\dfrac{181}{9}$ atau $20\frac{1}{9}$ satuan panjang}.
+
+\end{document}
