@@ -8,7 +8,7 @@
 
 \geometry{margin=2.5cm}
 
-\title{Penyelesaian Titik Berat Bidang Polar Non-Irisan}
+\title{Penyelesaian Luas Bidang Polar Non-Irisan}
 \author{Ahmad Fakhrul Bawani}
 \date{}
 
@@ -23,16 +23,16 @@ Diketahui dua persamaan kurva dalam koordinat polar:
   r_2 &= 2 + 2\sin\theta \quad \text{(Kardioida menghadap atas)}
 \end{align*}
 
-Akan dicari luas daerah yang dibatasi oleh kedua kurva tersebut tetapi \textbf{bukan merupakan irisan} dari keduanya.
+Akan dicari luas daerah yang dibatasi oleh kedua kurva tersebut tetapi \textbf{bukan merupakan irisan} (symmetric difference) dari keduanya.
 
 \subsection*{1. Rumus Utama Luas dalam Koordinat Polar}
-Secara umum, rumus elemen luas daerah ($dA$) dalam koordinat polar yang disapu oleh jari-jari $r$ terhadap perubahan sudut $d\theta$ adalah:
+Secara umum, rumus elemen luas daerah ($dA$) dalam koordinat polar yang disapu antara dua kurva $r_{\text{luar}}$ dan $r_{\text{dalam}}$ terhadap perubahan sudut $d\theta$ adalah:
 \[
-dA = \frac{1}{2} r^2 \, d\theta
+dA = \frac{1}{2} \left( r_{\text{luar}}^2 - r_{\text{dalam}}^2 \right) d\theta
 \]
-Sehingga, luas total ($A$) pada batas sudut $\alpha \le \theta \le \beta$ ditentukan oleh rumus integral:
+Sehingga, luas daerah non-irisan pada batas sudut $\alpha \le \theta \le \beta$ ditentukan oleh rumus integral:
 \[
-A = \int_{\alpha}^{\beta} \frac{1}{2} r^2 \, d\theta
+A = \int_{\alpha}^{\beta} \frac{1}{2} \left( r_{\text{luar}}^2 - r_{\text{dalam}}^2 \right) d\theta
 \]
 
 \subsection*{2. Menentukan Titik Potong Kedua Kurva (Batas Sudut)}
@@ -50,56 +50,55 @@ Diperoleh nilai sudut pemotong pada satu putaran penuh adalah:
 Titik potong ini membagi wilayah grafik secara simetris tepat di sepanjang sumbu-x (garis polar horizontal).
 
 \subsection*{3. Strategi Perhitungan Menggunakan Sifat Simetri}
-Berdasarkan visualisasi grafis, kedua kurva saling merefleksikan satu sama lain terhadap sumbu-x:
+Berdasarkan visualisasi grafis, wilayah non-irisan terdiri dari dua daun telinga yang simetris:
 \begin{itemize}
-  \item Daerah non-irisan bagian atas dibentuk oleh batas terluar kurva $r_2 = 2 + 2\sin\theta$ pada rentang $\theta \in [0, \pi]$.
-  \item Daerah non-irisan bagian bawah dibentuk oleh batas terluar kurva $r_1 = 2 - 2\sin\theta$ pada rentang $\theta \in [\pi, 2\pi]$.
+  \item Daun bagian atas: dibatasi oleh kurva luar $r_2$ dan kurva dalam $r_1$ pada rentang $\theta \in [0, \pi]$.
+  \item Daun bagian bawah: dibatasi oleh kurva luar $r_1$ dan kurva dalam $r_2$ pada rentang $\theta \in [\pi, 2\pi]$.
 \end{itemize}
-Karena kedua area luar tersebut memiliki ukuran geometri yang identik akibat simetri radial, luas total non-irisan dapat dihitung dengan mencari luas salah satu bagian daun utuh ($A_{\text{setengah}}$) kemudian dikalikan dua:
+Karena kedua area tersebut memiliki ukuran geometri yang identik akibat simetri radial, luas total non-irisan dapat dihitung dengan mencari luas daun bagian atas ($A_{\text{atas}}$) kemudian dikalikan dua:
 \[
-A_{\text{total}} = 2 \times A_{\text{setengah}}
+A_{\text{total}} = 2 \times A_{\text{atas}}
 \]
 
-\subsection*{4. Menghitung Luas Setengah Bagian ($A_{\text{setengah}}$)}
-Gunakan fungsi $r_2 = 2 + 2\sin\theta$ dengan batas integral dari $\theta = 0$ hingga $\theta = \pi$:
+\subsection*{4. Menghitung Luas Daun Bagian Atas ($A_{\text{atas}}$)}
+Pada rentang $0 \le \theta \le \pi$, kurva $r_2$ bertindak sebagai batas luar ($r_{\text{luar}}$) dan $r_1$ sebagai batas dalam ($r_{\text{dalam}}$):
 \[
-A_{\text{setengah}} = \frac{1}{2} \int_{0}^{\pi} (2 + 2\sin\theta)^2 \, d\theta
+A_{\text{atas}} = \frac{1}{2} \int_{0}^{\pi} \left( r_2^2 - r_1^2 \right) d\theta
 \]
-Jabarkan komponen kuadrat di dalam integral:
+Jabarkan pengurangan komponen kuadrat di dalam integral:
 \[
-(2 + 2\sin\theta)^2 = 4 + 8\sin\theta + 4\sin^2\theta
+r_2^2 - r_1^2 = (2 + 2\sin\theta)^2 - (2 - 2\sin\theta)^2
 \]
-Gunakan identitas trigonometri sudut ganda $\sin^2\theta = \frac{1 - \cos(2\theta)}{2}$ untuk mereduksi pangkat:
 \[
-4 + 8\sin\theta + 4\left(\frac{1 - \cos(2\theta)}{2}\right) = 6 + 8\sin\theta - 2\cos(2\theta)
+r_2^2 - r_1^2 = (4 + 8\sin\theta + 4\sin^2\theta) - (4 - 8\sin\theta + 4\sin^2\theta)
+\]
+Komponen konstanta dan $\sin^2\theta$ habis saling mengurangi, sehingga menyisakan:
+\[
+r_2^2 - r_1^2 = 16\sin\theta
 \]
 Substitusikan kembali hasil penyederhanaan ke dalam integral:
 \[
-A_{\text{setengah}} = \frac{1}{2} \int_{0}^{\pi} \left( 6 + 8\sin\theta - 2\cos(2\theta) \right) \, d\theta
+A_{\text{atas}} = \frac{1}{2} \int_{0}^{\pi} 16\sin\theta \, d\theta = 8 \int_{0}^{\pi} \sin\theta \, d\theta
 \]
 Lakukan proses integrasi:
 \[
-A_{\text{setengah}} = \frac{1}{2} \left[ 6\theta - 8\cos\theta - \sin(2\theta) \right]_{0}^{\pi}
+A_{\text{atas}} = 8 \Big[ -\cos\theta \Big]_{0}^{\pi}
 \]
 Evaluasi nilai menggunakan batas atas ($\pi$) dan batas bawah ($0$):
-\begin{itemize}
-  \item Batas atas ($\theta = \pi$): $\frac{1}{2} \left( 6\pi - 8\cos(\pi) - \sin(2\pi) \right) = \frac{1}{2}(6\pi + 8) = 3\pi + 4$
-  \item Batas bawah ($\theta = 0$): $\frac{1}{2} \left( 6(0) - 8\cos(0) - \sin(0) \right) = \frac{1}{2}(0 - 8) = -4$
-\end{itemize}
 \[
-A_{\text{setengah}} = (3\pi + 4) - (-4) = 3\pi + 8
+A_{\text{atas}} = 8 \Big( -\cos(\pi) - (-\cos(0)) \Big) = 8 \Big( 1 + 1 \Big) = 16
 \]
 
 \subsection*{5. Menghitung Luas Total Non-Irisan ($A_{\text{total}}$)}
-Sesuai strategi simetri di awal, kalikan luas setengah bagian tersebut dengan dua:
+Sesuai strategi simetri di awal, kalikan luas daun atas tersebut dengan dua untuk mendapatkan total seluruh daerah non-irisan:
 \[
-A_{\text{total}} = 2 \times (3\pi + 8) = 6\pi + 16
+A_{\text{total}} = 2 \times A_{\text{atas}} = 2 \times 16 = 32
 \]
 
 \subsection*{Kesimpulan}
 Luas daerah yang dibatasi oleh kurva $r = 2 - 2\sin\theta$ dan $r = 2 + 2\sin\theta$ yang bukan merupakan irisan keduanya adalah:
 \[
-A_{\text{total}} = 6\pi + 16 \approx 34.85 \quad \text{satuan luas}
+A_{\text{total}} = 32 \quad \text{satuan luas}
 \]
 
 \end{document}
