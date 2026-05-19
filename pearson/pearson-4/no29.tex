@@ -1,0 +1,88 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Massa dan Pusat Massa Kawat Linier}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the mass $M$ and the center of mass $\bar{x}$ of the linear wire covering the given interval and having the given density $\delta(x)$:
+\begin{equation*}
+  0 \le x \le 5, \quad \delta(x) = 8x + 9
+\end{equation*}
+
+\subsection*{1. Rumus Umum}
+Untuk kawat linier yang terletak pada interval $[a, b]$ dengan fungsi kerapatan $\delta(x)$:
+\begin{itemize}
+  \item \textbf{Massa Total ($M$):}
+    \begin{equation*}
+      M = \int_{a}^{b} \delta(x) \, dx
+    \end{equation*}
+  \item \textbf{Momen Pertama terhadap Titik Asal ($M_0$):}
+    \begin{equation*}
+      M_0 = \int_{a}^{b} x \cdot \delta(x) \, dx
+    \end{equation*}
+  \item \textbf{Pusat Massa ($\bar{x}$):}
+    \begin{equation*}
+      \bar{x} = \frac{M_0}{M}
+    \end{equation*}
+\end{itemize}
+
+\subsection*{2. Solusi Menghitung Massa ($M$)}
+Substitusikan fungsi kerapatan ke dalam rumus massa dengan batas $a = 0$ dan $b = 5$:
+\begin{align*}
+  M &= \int_{0}^{5} (8x + 9) \, dx \\
+  M &= \left[ 4x^2 + 9x \right]_{0}^{5} \\
+  M &= \left( \left[ 4(5)^2 + 9(5) \right] - 0 \right) \\
+  M &= (100 + 45) \\
+  M &= 145
+\end{align*}
+
+\subsection*{3. Solusi Menghitung Pusat Massa ($\bar{x}$)}
+Pertama, hitung momen pertama $M_0$ terhadap titik asal:
+\begin{align*}
+  M_0 &= \int_{0}^{5} x(8x + 9) \, dx \\
+  M_0 &= \int_{0}^{5} (8x^2 + 9x) \, dx \\
+  M_0 &= \left[ \frac{8}{3}x^3 + \frac{9}{2}x^2 \right]_{0}^{5} \\
+  M_0 &= \left( \left[ \frac{8}{3}(5)^3 + \frac{9}{2}(5)^2 \right] - 0 \right) \\
+  M_0 &= \left( \frac{8}{3}(125) + \frac{9}{2}(25) \right) \\
+  M_0 &= \frac{1000}{3} + \frac{225}{2}
+\end{align*}
+
+Samakan penyebutnya menjadi 6:
+\begin{align*}
+  M_0 &= \frac{2000 + 675}{6} = \frac{2675}{6}
+\end{align*}
+
+Sekarang, kita tentukan titik pusat massanya ($\bar{x}$):
+\begin{align*}
+  \bar{x} &= \frac{M_0}{M} \\
+  \bar{x} &= \frac{\frac{2675}{6}}{145} \\
+  \bar{x} &= \frac{2675}{6 \cdot 145} \\
+  \bar{x} &= \frac{2675}{870}
+\end{align*}
+Sederhanakan pecahan dengan membagi pembilang dan penyebut dengan faktor persekutuan terbesar mereka, yaitu 5:
+\begin{equation*}
+  \bar{x} = \frac{535}{174}
+\end{equation*}
+
+\subsection*{Kesimpulan}
+Jadi, hasil perhitungan untuk kawat linier tersebut adalah:
+\begin{itemize}
+  \item Massa total kawat ($M$) = \textbf{$145$}
+  \item Pusat massa kawat ($\bar{x}$) = \textbf{$\dfrac{535}{174}$}
+\end{itemize}
+
+\end{document}
