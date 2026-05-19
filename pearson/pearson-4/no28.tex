@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Pusat Massa Lempeng Tipis}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the center of mass of a thin plate of constant density $\delta$ covering the region between the curve $y = 8\sqrt{x}$ and the $x$-axis from $x = 1$ to $x = 16$.
+
+\subsection*{1. Rumus Umum Bidang Datar (Cartesian)}
+Untuk lempeng homogen dengan kerapatan konstan $\delta$ yang dibatasi oleh kurva atas $y = f(x)$ dan kurva bawah $y = 0$ pada interval $[a, b]$, komponen penghitungannya adalah:
+\begin{align*}
+  M &= \delta \int_{a}^{b} f(x) \, dx \\
+  M_y &= \delta \int_{a}^{b} x \cdot f(x) \, dx \\
+  M_x &= \delta \int_{a}^{b} \frac{1}{2} [f(x)]^2 \, dx
+\end{align*}
+Titik pusat massa $(\bar{x}, \bar{y})$ diperoleh melalui hubungan: $\bar{x} = \dfrac{M_y}{M}$ dan $\bar{y} = \dfrac{M_x}{M}$.
+
+\subsection*{2. Langkah Perhitungan Integral}
+
+\subsubsection*{a. Menghitung Massa Total ($M$)}
+Substitusikan $f(x) = 8x^{\frac{1}{2}}$ dengan batas dari $1$ sampai $16$:
+\begin{align*}
+  M &= \delta \int_{1}^{16} 8x^{\frac{1}{2}} \, dx \\
+  M &= 8\delta \left[ \frac{2}{3}x^{\frac{3}{2}} \right]_{1}^{16} \\
+  M &= \frac{16}{3}\delta \left( 16^{\frac{3}{2}} - 1^{\frac{3}{2}} \right) \\
+  M &= \frac{16}{3}\delta \left( 64 - 1 \right) \\
+  M &= \frac{16}{3}\delta (63) = 16 \cdot 21 \cdot \delta = 336\delta
+\end{align*}
+
+\subsubsection*{b. Menghitung Momen terhadap Sumbu-$y$ ($M_y$)}
+\begin{align*}
+  M_y &= \delta \int_{1}^{16} x \cdot \left(8x^{\frac{1}{2}}\right) \, dx \\
+  M_y &= 8\delta \int_{1}^{16} x^{\frac{3}{2}} \, dx \\
+  M_y &= 8\delta \left[ \frac{2}{5}x^{\frac{5}{2}} \right]_{1}^{16} \\
+  M_y &= \frac{16}{5}\delta \left( 16^{\frac{5}{2}} - 1^{\frac{5}{2}} \right) \\
+  M_y &= \frac{16}{5}\delta \left( 1024 - 1 \right) \\
+  M_y &= \frac{16}{5}\delta (1023) = \frac{16368}{5}\delta
+\end{align*}
+
+\subsubsection*{c. Menghitung Momen terhadap Sumbu-$x$ ($M_x$)}
+\begin{align*}
+  M_x &= \delta \int_{1}^{16} \frac{1}{2} \left(8\sqrt{x}\right)^2 \, dx \\
+  M_x &= \delta \int_{1}^{16} \frac{1}{2} (64x) \, dx \\
+  M_x &= 32\delta \left[ \frac{1}{2}x^2 \right]_{1}^{16} \\
+  M_x &= 16\delta \left( 16^2 - 1^2 \right) \\
+  M_x &= 16\delta (256 - 1) \\
+  M_x &= 16\delta (255) = 4080\delta
+\end{align*}
+
+\subsection*{3. Menentukan Pusat Massa $(\bar{x}, \bar{y})$}
+Sekarang, bagi masing-masing momen dengan massa total $M$:
+
+\begin{itemize}
+  \item \textbf{Koordinat Absis ($\bar{x}$):}
+    \begin{equation*}
+      \bar{x} = \frac{M_y}{M} = \frac{\frac{16368}{5}\delta}{336\delta} = \frac{16368}{5 \cdot 336} = \frac{16368}{1680}
+    \end{equation*}
+    Sederhanakan pecahan dengan membagi pembilang dan penyebut dengan $48$:
+    \begin{equation*}
+      \bar{x} = \frac{341}{35}
+    \end{equation*}
+
+  \item \textbf{Koordinat Ordinat ($\bar{y}$):}
+    \begin{equation*}
+      \bar{y} = \frac{M_x}{M} = \frac{4080\delta}{336\delta} = \frac{4080}{336}
+    \end{equation}
+    Sederhanakan pecahan dengan membagi pembilang dan penyebut dengan $48$:
+    \begin{equation*}
+      \bar{y} = \frac{85}{7}
+    \end{equation*}
+\end{itemize}
+
+\subsection*{Kesimpulan}
+Jadi, pusat massa dari lempeng tipis tersebut berada pada koordinat \textbf{$\left(\dfrac{341}{35}, \dfrac{85}{7}\right)$}.
+
+\end{document}
