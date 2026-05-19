@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Volume dan Luas Permukaan dengan Teorema Pappus}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+The square region with vertices $(11,0)$, $(22,11)$, $(11,22)$, and $(0,11)$ is revolved about the $x$-axis to generate a solid. Find the volume and surface area of the solid.
+
+\subsection*{1. Karakteristik Daerah Persegi}
+Mari kita tentukan terlebih dahulu panjang sisi, luas, keliling, dan pusat massa (sentroid) dari daerah persegi tersebut:
+\begin{itemize}
+  \item \textbf{Panjang Sisi ($s$):}
+    Menggunakan rumus jarak antara titik $(11,0)$ dan $(0,11)$:
+    \begin{equation*}
+      s = \sqrt{(11 - 0)^2 + (0 - 11)^2} = \sqrt{121 + 121} = \sqrt{242} = 11\sqrt{2}
+    \end{equation*}
+  \item \textbf{Luas Persegi ($A$):}
+    \begin{equation*}
+      A = s^2 = (11\sqrt{2})^2 = 242
+    \end{equation*}
+  \item \textbf{Keliling Persegi ($L$):}
+    \begin{equation*}
+      L = 4s = 4(11\sqrt{2}) = 44\sqrt{2}
+    \end{equation*}
+  \item \textbf{Sentroid Persegi ($\bar{x}, \bar{y}$):}
+    Pusat massa persegi terletak pada titik potong diagonalnya, yaitu rata-rata dari koordinat keempat titik sudutnya:
+    \begin{equation*}
+      \bar{y} = \frac{0 + 11 + 22 + 11}{4} = \frac{44}{4} = 11
+    \end{equation*}
+    *(Kita hanya memerlukan koordinat $\bar{y}$ karena poros putaran adalah sumbu-$x$, sehingga jarak sentroid ke poros adalah $R = \bar{y} = 11$).*
+\end{itemize}
+
+\subsection*{2. Menghitung Volume Benda Putar ($V$)}
+Berdasarkan **Teorema Pappus untuk Volume**, volume benda putar yang dihasilkan dari perputaran suatu daerah sejauh $360^\circ$ mengelilingi poros yang tidak memotongnya adalah:
+\begin{equation*}
+  V = 2\pi \cdot R \cdot A
+\end{equation*}
+
+Substitusikan nilai jarak sentroid $R = 11$ dan luas daerah $A = 242$:
+\begin{align*}
+  V &= 2\pi \cdot 11 \cdot 242 \\
+  V &= 22\pi \cdot 242 \\
+  V &= 5324\pi
+\end{align*}
+
+Jadi, volume benda putar tersebut adalah \textbf{$5324\pi$ satuan volume}.
+
+\subsection*{3. Menghitung Luas Permukaan Benda Putar ($S$)}
+Berdasarkan **Teorema Pappus untuk Luas Permukaan**, luas kulit dari benda putar yang dihasilkan oleh busur/kurva pembatas luar berpanjang $L$ adalah:
+\begin{equation*}
+  S = 2\pi \cdot R \cdot L
+\end{equation*}
+
+Substitusikan nilai jarak sentroid kurva keliling $R = 11$ dan keliling persegi $L = 44\sqrt{2}$:
+\begin{align*}
+  S &= 2\pi \cdot 11 \cdot 44\sqrt{2} \\
+  S &= 22\pi \cdot 44\sqrt{2} \\
+  S &= 968\pi\sqrt{2}
+\end{align*}
+
+Jadi, luas permukaan benda putar tersebut adalah \textbf{$968\pi\sqrt{2}$ satuan luas}.
+
+\end{document}
