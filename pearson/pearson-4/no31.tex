@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Sentroid dengan Teorema Pappus}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Use Pappus's theorem for surface area and the fact that the surface area of a sphere of radius $\rho$ is $4\pi\rho^2$ to find the centroid of the semicircle $y = \sqrt{\rho^2 - x^2}$.
+
+\subsection*{1. Teorema Pappus untuk Luas Permukaan}
+Teorema Pappus untuk luas permukaan menyatakan bahwa jika sebuah kurva bidang datar dengan panjang busur $L$ diputar mengelilingi sebuah poros yang tidak memotong kurva tersebut, maka luas permukaan benda putar ($S$) yang dihasilkan adalah:
+\begin{equation*}
+  S = 2\pi \cdot \bar{y} \cdot L
+\end{equation责任}
+Di mana $\bar{y}$ adalah jarak tegak lurus dari pusat massa (sentroid) kurva ke kapak/poros putaran (dalam hal ini, sumbu-$x$).
+
+\subsection*{2. Menentukan Karakteristik Kurva Setengah Lingkaran}
+Kurva yang diberikan adalah $y = \sqrt{\rho^2 - x^2}$, yang merupakan busur setengah lingkaran bagian atas dengan jari-jari $\rho$.
+
+\begin{itemize}
+  \item \textbf{Simetri Koordinat Sentroid ($\bar{x}$):}
+    Karena kurva setengah lingkaran $y = \sqrt{\rho^2 - x^2}$ simetris secara reflektif terhadap sumbu-$y$, maka posisi horizontal sentroidnya berada tepat di tengah, yaitu:
+    \begin{equation*}
+      \bar{x} = 0
+    \end{equation*}
+  \item \textbf{Panjang Busur Kurva ($L$):}
+    Keliling lingkaran penuh berjejari $\rho$ adalah $2\pi\rho$. Karena kurva ini berbentuk setengah lingkaran, maka panjang busurnya adalah:
+    \begin{equation*}
+      L = \frac{1}{2} (2\pi\rho) = \pi\rho
+    \end{equation*}
+\end{itemize}
+
+\subsection*{3. Aplikasi Perputaran dan Pencarian $\bar{y}$}
+Jika kurva setengah lingkaran ini diputar $360^\circ$ mengelilingi sumbu-$x$, benda putar yang dihasilkan berbentuk sebuah **bola penuh** dengan jari-jari $\rho$.
+
+Berdasarkan fakta geometri yang diberikan pada soal, luas permukaan bola tersebut adalah:
+\begin{equation*}
+  S = 4\pi\rho^2
+\end{equation*}
+
+Substitusikan nilai luas permukaan $S = 4\pi\rho^2$ dan panjang busur $L = \pi\rho$ ke dalam rumus Teorema Pappus:
+\begin{align*}
+  S &= 2\pi \cdot \bar{y} \cdot L \\
+  4\pi\rho^2 &= 2\pi \cdot \bar{y} \cdot (\pi\rho) \\
+  4\pi\rho^2 &= 2\pi^2\rho \cdot \bar{y}
+\end{align*}
+
+Selesaikan persamaan di atas untuk mencari nilai koordinat vertikal sentroid ($\bar{y}$):
+\begin{align*}
+  \bar{y} &= \frac{4\pi\rho^2}{2\pi^2\rho} \\
+  \bar{y} &= \frac{2\rho}{\pi}
+\end{align*}
+
+\subsection*{Kesimpulan}
+Jadi, dengan memanfaatkan Teorema Pappus untuk luas permukaan, sentroid dari kurva setengah lingkaran tersebut berada pada koordinat \textbf{$\left(0, \dfrac{2\rho}{\pi}\right)$}.
+
+\end{document}
