@@ -1,0 +1,113 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Pusat Massa Lempeng Tipis}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the center of mass of a thin plate of constant density $\delta$ covering the given regions:
+\begin{itemize}
+  \item[\textbf{a.}] The region cut from the first quadrant by the circle $x^2 + y^2 = 100$.
+  \item[\textbf{b.}] The region bounded by the $x$-axis and the semicircle $y = \sqrt{100 - x^2}$.
+  \item[\textbf{c.}] Compare your answer in part (b) with the answer in part (a).
+\end{itemize}
+
+\subsection*{1. Rumus Umum Bidang Datar (Cartesian)}
+Untuk daerah yang dibatasi oleh kurva atas $y = f(x)$ dan sumbu-$x$ ($y = 0$) pada interval $[a, b]$ dengan kerapatan konstan $\delta$:
+\begin{align*}
+  M &= \delta \int_{a}^{b} f(x) \, dx \\
+  M_y &= \delta \int_{a}^{b} x \cdot f(x) \, dx \\
+  M_x &= \delta \int_{a}^{b} \frac{1}{2} [f(x)]^2 \, dx
+\end{align*}
+Pusat massa diperoleh dari $\bar{x} = \dfrac{M_y}{M}$ dan $\bar{y} = \dfrac{M_x}{M}$.
+
+\subsection*{2. Solusi Bagian (a): Seperempat Lingkaran Kuadran Pertama}
+Persamaan lingkaran $x^2 + y^2 = 100 \implies y = \sqrt{100 - x^2}$. 
+Batas kuadran pertama adalah dari $x = 0$ sampai $x = 10$.
+
+\begin{itemize}
+  \item \textbf{Massa Total ($M$):}
+    Karena daerah berbentuk seperempat lingkaran berjejari $R=10$:
+    \begin{equation*}
+      M = \delta \cdot \left(\frac{1}{4} \pi R^2\right) = \delta \cdot \left(\frac{1}{4} \pi \cdot 100\right) = 25\pi\delta
+    \end{equation*}
+
+  \item \textbf{Momen terhadap Sumbu-$y$ ($M_y$):}
+    \begin{equation*}
+      M_y = \delta \int_{0}^{10} x \sqrt{100 - x^2} \, dx
+    \end{equation*}
+    Gunakan substitusi: $u = 100 - x^2 \implies du = -2x \, dx \implies x \, dx = -\frac{1}{2} \, du$.
+    Batas baru: $x=0 \implies u=100$; \quad $x=10 \implies u=0$.
+    \begin{align*}
+      M_y &= \delta \int_{100}^{0} \sqrt{u} \left(-\frac{1}{2} \, du\right) = \frac{1}{2}\delta \int_{0}^{100} u^{\frac{1}{2}} \, du \\
+      &= \frac{1}{2}\delta \left[ \frac{2}{3}u^{\frac{3}{2}} \right]_{0}^{100} = \frac{1}{3}\delta \left( 100\sqrt{100} - 0 \right) = \frac{1000}{3}\delta
+    \end{align*}
+
+  \item \textbf{Momen terhadap Sumbu-$x$ ($M_x$):}
+    \begin{align*}
+      M_x &= \delta \int_{0}^{10} \frac{1}{2} \left(\sqrt{100 - x^2}\right)^2 \, dx = \frac{1}{2}\delta \int_{0}^{10} (100 - x^2) \, dx \\
+      &= \frac{1}{2}\delta \left[ 100x - \frac{1}{3}x^3 \right]_{0}^{10} = \frac{1}{2}\delta \left( 1000 - \frac{1000}{3} \right) \\
+      &= \frac{1}{2}\delta \left( \frac{2000}{3} \right) = \frac{1000}{3}\delta
+    \end{align*}
+
+  \item \textbf{Pusat Massa $(\bar{x}, \bar{y})$:}
+    \begin{equation*}
+      \bar{x} = \frac{M_y}{M} = \frac{\frac{1000}{3}\delta}{25\pi\delta} = \frac{40}{3\pi}, \quad \bar{y} = \frac{M_x}{M} = \frac{\frac{1000}{3}\delta}{25\pi\delta} = \frac{40}{3\pi}
+    \end{equation*}
+\end{itemize}
+
+\subsection*{3. Solusi Bagian (b): Setengah Lingkaran Atas}
+Kurva $y = \sqrt{100 - x^2}$ dibatasi sumbu-$x$ pada interval $x = -10$ sampai $x = 10$.
+
+\begin{itemize}
+  \item \textbf{Massa Total ($M$):}
+    Luas setengah lingkaran berjejari $R=10$:
+    \begin{equation*}
+      M = \delta \cdot \left(\frac{1}{2} \pi R^2\right) = 50\pi\delta
+    \end{equation*}
+
+  \item \textbf{Momen terhadap Sumbu-$y$ ($M_y$):}
+    \begin{equation*}
+      M_y = \delta \int_{-10}^{10} x \sqrt{100 - x^2} \, dx
+    \end{equation*}
+    Fungsi $g(x) = x\sqrt{100-x^2}$ adalah fungsi ganjil ($g(-x) = -g(x)$). Berdasarkan sifat simetri integral tentu pada interval $[-10, 10]$:
+    \begin{equation*}
+      M_y = 0
+    \end{equation*}
+
+  \item \textbf{Momen terhadap Sumbu-$x$ ($M_x$):}
+    \begin{align*}
+      M_x &= \delta \int_{-10}^{10} \frac{1}{2} \left(\sqrt{100 - x^2}\right)^2 \, dx = \frac{1}{2}\delta \int_{-10}^{10} (100 - x^2) \, dx
+    \end{align*}
+    Karena fungsi di dalamnya genap, kita bisa mengalikan dua dengan batas dari $0$ ke $10$:
+    \begin{align*}
+      M_x &= \frac{1}{2}\delta \cdot 2 \int_{0}^{10} (100 - x^2) \, dx = \delta \left[ 100x - \frac{1}{3}x^3 \right]_{0}^{10} \\
+      &= \delta \left( 1000 - \frac{1000}{3} \right) = \frac{2000}{3}\delta
+    \end{align*}
+
+  \item \textbf{Pusat Massa $(\bar{x}, \bar{y})$:}
+    \begin{equation*}
+      \bar{x} = \frac{M_y}{M} = \frac{0}{50\pi\delta} = 0, \quad \bar{y} = \frac{M_x}{M} = \frac{\frac{2000}{3}\delta}{50\pi\delta} = \frac{40}{3\pi}
+    \end{equation*}
+\end{itemize}
+
+\subsection*{4. Bagian (c): Perbandingan Jawaban}
+\begin{itemize}
+  \item Nilai ordinat vertikal pusat massa ($\bar{y}$) untuk kedua daerah adalah \textbf{sama}, yaitu $\dfrac{40}{3\pi}$. Ini menunjukkan tinggi pusat massa dari sumbu-$x$ tidak berubah meskipun wilayahnya diperlebar secara simetris ke kiri.
+  \item Nilai koordinat horizontal ($\bar{x}$) berubah dari $\dfrac{40}{3\pi}$ menjadi $0$ karena wilayah tambahan di kuadran kedua menarik titik keseimbangan horizontal tepat berada di garis tengah ($x = 0$).
+\end{itemize}
+
+\end{document}
