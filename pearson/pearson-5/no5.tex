@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Panjang Busur Kurva Trigonometri}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the length of the curve:
+\begin{equation*}
+  x = 7\sin t - 7t\cos t, \quad y = 7\cos t + 7t\sin t, \quad 0 \le t \le \frac{\pi}{2}
+\end{equation*}
+
+\subsection*{1. Menentukan Komponen Turunan}
+Kita cari turunan pertama dari masing-masing fungsi komponen menggunakan aturan perkalian ($sub$-turunan dari bentuk $t \cdot \cos t$ dan $t \cdot \sin t$):
+
+\begin{itemize}
+  \item \textbf{Turunan komponen $x$:}
+    \begin{align*}
+      \frac{dx}{dt} &= \frac{d}{dt}(7\sin t) - 7 \cdot \frac{d}{dt}(t\cos t) \\
+      &= 7\cos t - 7(\cos t - t\sin t) \\
+      &= 7\cos t - 7\cos t + 7t\sin t = 7t\sin t
+    \end{align*}
+
+  \item \textbf{Turunan komponen $y$:}
+    \begin{align*}
+      \frac{dy}{dt} &= \frac{d}{dt}(7\cos t) + 7 \cdot \frac{d}{dt}(t\sin t) \\
+      &= -7\sin t + 7(\sin t + t\cos t) \\
+      &= -7\sin t + 7\sin t + 7t\cos t = 7t\cos t
+    \end{align*}
+\end{itemize}
+
+\subsection*{2. Menyederhanakan Suku di Dalam Akar ($\sqrt{\dots}$)}
+Sebelum memasukkannya ke dalam integral panjang busur, mari kuadratkan kedua komponen turunan dan jumlahkan nilainya:
+\begin{align*}
+  \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= (7t\sin t)^2 + (7t\cos t)^2 \\
+  &= 49t^2\sin^2 t + 49t^2\cos^2 t \\
+  &= 49t^2(\sin^2 t + \cos^2 t)
+\end{align*}
+
+Menggunakan identitas trigonometri utama $\sin^2 t + \cos^2 t = 1$, persamaannya menyusut menjadi kuadrat sempurna yang sederhana:
+\begin{equation*}
+  \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 = 49t^2
+\end{equation*}
+
+\subsection*{3. Evaluasi Perhitungan Integral Panjang Busur ($L$)}
+Substitusikan bentuk yang telah disederhanakan ke dalam rumus panjang kurva parametrik dengan batas dari $t = 0$ hingga $t = \frac{\pi}{2}$:
+\begin{align*}
+  L &= \int_{0}^{\frac{\pi}{2}} \sqrt{49t^2} \, dt \\
+  L &= \int_{0}^{\frac{\pi}{2}} 7t \, dt
+\end{align*}
+
+Lakukan proses pengintegralan langsung terhadap variabel $t$:
+\begin{align*}
+  L &= \left[ \frac{7}{2}t^2 \right]_{0}^{\frac{\pi}{2}} \\
+  L &= \frac{7}{2} \left( \left[ \frac{\pi}{2} \right]^2 - 0^2 \right) \\
+  L &= \frac{7}{2} \left( \frac{\pi^2}{4} \right) \\
+  L &= \frac{7\pi^2}{8}
+\end{align*}
+
+\subsection*{Kesimpulan}
+Hasil akhir perhitungan eksak untuk panjang kurva bidang datar tersebut adalah \textbf{$\dfrac{7\pi^2}{8}$} satuan panjang.
+
+\end{document}
