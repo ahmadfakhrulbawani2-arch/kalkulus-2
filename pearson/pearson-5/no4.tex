@@ -1,0 +1,76 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Panjang Busur Kurva Parametrik}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find the length of the curve:
+\begin{equation*}
+  x = \frac{t^2}{2}, \quad y = \frac{(2t + 1)^{3/2}}{3}, \quad 0 \le t \le 20
+\end{equation*}
+
+\subsection*{1. Menentukan Komponen Turunan}
+Pertama, kita cari turunan pertama dari masing-masing komponen fungsi parametrik terhadap parameter $t$:
+\begin{itemize}
+  \item \textbf{Turunan komponen $x$:}
+    \begin{equation*}
+      \frac{dx}{dt} = \frac{d}{dt}\left(\frac{1}{2}t^2\right) = t
+    \end{equation*}
+  \item \textbf{Turunan komponen $y$:}
+    Menggunakan aturan rantai:
+    \begin{equation*}
+      \frac{dy}{dt} = \frac{d}{dt}\left(\frac{1}{3}(2t + 1)^{3/2}\right) = \frac{1}{3} \cdot \frac{3}{2}(2t + 1)^{1/2} \cdot 2 = (2t + 1)^{1/2} = \sqrt{2t + 1}
+    \end{equation*}
+\end{itemize}
+
+\subsection*{2. Menyusun Integral Panjang Kurva ($L$)}
+Rumus dasar dari panjang kurva parametrik adalah:
+\begin{equation*}
+  L = \int_{a}^{b} \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt
+\end{equation*}
+
+Substitusikan komponen kuadrat turunan ke dalam akar:
+\begin{align*}
+  \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= (t)^2 + \left(\sqrt{2t + 1}\right)^2 \\
+  &= t^2 + 2t + 1
+\end{align*}
+
+Perhatikan bahwa bentuk $t^2 + 2t + 1$ merupakan bentuk kuadrat sempurna, yaitu $(t + 1)^2$. Maka bentuk integralnya menjadi:
+\begin{align*}
+  L &= \int_{0}^{20} \sqrt{t^2 + 2t + 1} \, dt \\
+  L &= \int_{0}^{20} \sqrt{(t + 1)^2} \, dt \\
+  L &= \int_{0}^{20} (t + 1) \, dt
+\end{align*}
+
+\subsection*{3. Evaluasi Perhitungan Integral}
+Sekarang, kita integralkan fungsi tersebut dari batas $t = 0$ hingga $t = 20$:
+\begin{align*}
+  L &= \left[ \frac{1}{2}t^2 + t \right]_{0}^{20} \\
+  L &= \left( \left[ \frac{1}{2}(20)^2 + 20 \right] - 0 \right) \\
+  L &= \left( \frac{1}{2}(400) + 20 \right) \\
+  L &= 200 + 20 \\
+  L &= 220
+\end{align*}
+
+\subsection*{Kesimpulan}
+Berdasarkan langkah penyelesaian di atas, isian yang tepat untuk masing-masing bagian pada lembar kerja adalah:
+\begin{itemize}
+  \item \textbf{Part 1 (Bentuk Integral):} $L = \int_{0}^{20} (t + 1) \, dt$ \quad $\left(\text{atau } \int_{0}^{20} \sqrt{t^2 + 2t + 1} \, dt\right)$
+  \item \textbf{Part 2 (Hasil Akhir):} \textbf{$220$}
+\end{itemize}
+
+\end{document}
