@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menentukan Persamaan Kartesius dari Persamaan Parametrik}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+The parametric equations and parameter intervals for the motion of a particle in the $xy$-plane are given below. Identify the particle's path by finding a Cartesian equation for it. Graph the Cartesian equation. Indicate the portion of the graph traced by the particle and the direction of motion.
+\begin{equation*}
+  x = 5\cos(2t), \quad y = 5\sin(2t), \quad 0 \le t \le \frac{\pi}{2}
+\end{equation*}
+
+\subsection*{1. Mencari Persamaan Kartesius}
+Kita dapat mengeliminasi parameter $t$ dengan mengisolasi fungsi trigonometri pada masing-masing persamaan:
+\begin{align*}
+  x = 5\cos(2t) &\implies \cos(2t) = \frac{x}{5} \\
+  y = 5\sin(2t) &\implies \sin(2t) = \frac{y}{5}
+\end{align*}
+
+Gunakan identitas trigonometri utama $\cos^2(\theta) + \sin^2(\theta) = 1$ di mana $\theta = 2t$:
+\begin{align*}
+  \cos^2(2t) + \sin^2(2t) &= 1 \\
+  \left(\frac{x}{5}\right)^2 + \left(\frac{y}{5}\right)^2 &= 1 \\
+  \frac{x^2}{25} + \frac{y^2}{25} &= 1 \\
+  x^2 + y^2 &= 25
+\end{align*}
+
+Jadi, persamaan Kartesius untuk jalur partikel tersebut adalah \textbf{$x^2 + y^2 = 25$}, yang merepresentasikan sebuah lingkaran yang berpusat di titik asal $(0,0)$ dengan jari-jari $R = 5$.
+
+\subsection*{2. Menentukan Porsi Grafik dan Arah Pergerakan}
+Untuk mengetahui bagian lingkaran mana yang dilalui dan ke mana arahnya, kita substitusikan nilai batas parameter $t$ ke dalam persamaan parametrik awal:
+
+\begin{itemize}
+  \item \textbf{Saat Titik Awal ($t = 0$):}
+    \begin{align*}
+      x &= 5\cos(2 \cdot 0) = 5\cos(0) = 5(1) = 5 \\
+      y &= 5\sin(2 \cdot 0) = 5\sin(0) = 5(0) = 0
+    \end{align*}
+    Partikel mulai bergerak dari titik \textbf{$(5, 0)$}.
+
+  \item \textbf{Saat Titik Tengah ($t = \frac{\pi}{4}$):}
+    \begin{align*}
+      x &= 5\cos\left(2 \cdot \frac{\pi}{4}\right) = 5\cos\left(\frac{\pi}{2}\right) = 5(0) = 0 \\
+      y &= 5\sin\left(2 \cdot \frac{\pi}{4}\right) = 5\sin\left(\frac{\pi}{2}\right) = 5(1) = 5
+    \end{align*}
+    Partikel berada di titik \textbf{$(0, 5)$}.
+
+  \item \textbf{Saat Titik Akhir ($t = \frac{\pi}{2}$):}
+    \begin{align*}
+      x &= 5\cos\left(2 \cdot \frac{\pi}{2}\right) = 5\cos(\pi) = 5(-1) = -5 \\
+      y &= 5\sin\left(2 \cdot \frac{\pi}{2}\right) = 5\sin(\pi) = 5(0) = 0
+    \end{align*}
+    Partikel berhenti di titik \textbf{$(-5, 0)$}.
+\end{itemize}
+
+\subsection*{Kesimpulan Analisis}
+Berdasarkan uji titik koordinat di atas, karakteristik pergerakan partikel dapat disimpulkan sebagai berikut:
+\begin{itemize}
+  \item \textbf{Persamaan Kartesius:} $x^2 + y^2 = 25$
+  \item \textbf{Porsi Grafik yang Dilalui:} Hanya bagian \textbf{setengah lingkaran atas} (berada di kuadran I dan kuadran II), karena nilai koordinat bergerak dari $x = 5$ menuju $x = -5$ dengan nilai $y \ge 0$.
+  \item \textbf{Arah Gerakan:} Bergerak berlawanan arah jarum jam (\textbf{\textit{counterclockwise}}), dimulai dari titik kanan $(5,0)$ melewati puncak atas $(0,5)$ hingga berakhir di titik kiri $(-5,0)$.
+\end{itemize}
+
+\end{document}
