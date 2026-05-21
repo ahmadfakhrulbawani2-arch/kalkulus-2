@@ -1,0 +1,90 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{margin=2.5cm}
+
+\title{Menghitung Garis Singgung dan Turunan Kedua Parametrik}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal}
+
+Find an equation for the line tangent to the curve at the point defined by the given value of $t$. Also, find the value of $\frac{d^2y}{dx^2}$ at this point.
+\begin{equation*}
+  x = 16\sin t, \quad y = 4\cos t, \quad t = \frac{\pi}{4}
+\end{equation*}
+
+\subsection*{1. Menentukan Titik Singgung $(x_0, y_0)$}
+Substitusikan nilai parameter $t = \frac{\pi}{4}$ ke dalam persamaan komponen posisi:
+\begin{align*}
+  x_0 &= 16\sin\left(\frac{\pi}{4}\right) = 16\left(\frac{1}{2}\sqrt{2}\right) = 8\sqrt{2} \\
+  y_0 &= 4\cos\left(\frac{\pi}{4}\right) = 4\left(\frac{1}{2}\sqrt{2}\right) = 2\sqrt{2}
+\end{align*}
+Maka titik koordinat singgungnya berada pada \textbf{$\left(8\sqrt{2}, 2\sqrt{2}\right)$}.
+
+\subsection*{2. Menghitung Turunan Pertama $\frac{dy}{dx}$ dan Gradien}
+Gunakan aturan rantai untuk mencari komponen turunan terhadap parameter $t$:
+\begin{align*}
+  \frac{dx}{dt} &= \frac{d}{dt}(16\sin t) = 16\cos t \\
+  \frac{dy}{dt} &= \frac{d}{dt}(4\cos t) = -4\sin t
+\end{align*}
+
+Maka fungsi rumus $\frac{dy}{dx}$ berbentuk:
+\begin{equation*}
+  \frac{dy}{dx} = \frac{\frac{dy}{dt}}{\frac{dx}{dt}} = \frac{-4\sin t}{16\cos t} = -\frac{1}{4}\tan t
+\end{equation*}
+
+Substitusikan $t = \frac{\pi}{4}$ untuk mencari gradien garis singgung ($m$):
+\begin{equation*}
+  m = \left. \frac{dy}{dx} \right|_{t=\frac{\pi}{4}} = -\frac{1}{4}\tan\left(\frac{\pi}{4}\right) = -\frac{1}{4}(1) = -\frac{1}{4}
+\end{equation*}
+
+\subsection*{3. Menyusun Persamaan Garis Singgung}
+Menggunakan rumus persamaan garis $y - y_0 = m(x - x_0)$ dengan $m = -\frac{1}{4}$ dan titik singgung $\left(8\sqrt{2}, 2\sqrt{2}\right)$:
+\begin{align*}
+  y - 2\sqrt{2} &= -\frac{1}{4}\left(x - 8\sqrt{2}\right) \\
+  y - 2\sqrt{2} &= -\frac{1}{4}x + 2\sqrt{2} \\
+  y &= -\frac{1}{4}x + 4\sqrt{2}
+\end{align*}
+
+\subsection*{4. Menghitung Turunan Kedua $\frac{d^2y}{dx^2}$}
+Rumus turunan kedua untuk persamaan berbentuk fungsi parametrik didefinisikan sebagai:
+\begin{equation*}
+  \frac{d^2y}{dx^2} = \frac{\frac{d}{dt}\left(\frac{dy}{dx}\right)}{\frac{dx}{dt}}
+\end{equation*}
+
+Mari cari komponen pembilang turunan dari hasil fungsi $\frac{dy}{dx} = -\frac{1}{4}\tan t$:
+\begin{equation*}
+  \frac{d}{dt}\left(-\frac{1}{4}\tan t\right) = -\frac{1}{4}\sec^2 t
+\end{equation*}
+
+Gabungkan kembali ke dalam rumus utama dengan $\frac{dx}{dt} = 16\cos t$:
+\begin{equation*}
+  \frac{d^2y}{dx^2} = \frac{-\frac{1}{4}\sec^2 t}{16\cos t} = -\frac{1}{64}\sec^3 t
+\end{equation*}
+
+Sekarang, substitusikan nilai $t = \frac{\pi}{4}$ ke dalam fungsi turunan kedua tersebut. Ingat bahwa $\sec\left(\frac{\pi}{4}\right) = \sqrt{2}$:
+\begin{align*}
+  \frac{d^2y}{dx^2} &= -\frac{1}{64} \left[\sec\left(\frac{\pi}{4}\right)\right]^3 \\
+  &= -\frac{1}{64} (\sqrt{2})^3 \\
+  &= -\frac{1}{64} (2\sqrt{2}) = -\frac{\sqrt{2}}{32}
+\end{align*}
+
+\subsection*{Kesimpulan Isian Jawaban}
+Berdasarkan pengerjaan di atas, isian box jawaban yang tepat adalah:
+\begin{itemize}
+  \item \textbf{Turunan Pertama ($\frac{dy}{dx}$):} $-\frac{1}{4}\tan t$ \quad (Nilainya di titik tersebut adalah $-\frac{1}{4}$)
+  \item \textbf{Persamaan Garis Singgung:} $y = -\frac{1}{4}x + 4\sqrt{2}$
+  \item \textbf{Nilai Turunan Kedua ($\frac{d^2y}{dx^2}$):} $-\frac{\sqrt{2}}{32}$
+\end{itemize}
+
+\end{document}
