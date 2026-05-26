@@ -1,0 +1,252 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[indonesian]{babel}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Solusi Lengkap dan Penjelasan Soal Kalkulus}}
+\author{\textbf{Ahmad Fakhrul Bawani}}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Soal 1: Luas Daerah yang Dibatasi Kurva}
+\textbf{Soal:} Hitunglah luas daerah yang dibatasi oleh kurva $y = x^2 - 4x$, garis $x = 5$, dan sumbu-$x$.
+
+\subsection*{Langkah Penyelesaian:}
+\begin{enumerate}
+  \item \textbf{Menentukan Titik Potong dengan Sumbu-$x$:}
+  Titik potong terjadi saat $y = 0$.
+  \begin{equation*}
+    x^2 - 4x = 0 \implies x(x - 4) = 0
+  \end{equation*}
+  Kurva memotong sumbu-$x$ di $x = 0$ dan $x = 4$.
+  
+  \item \textbf{Analisis Grafik dan Batas Integrasi:}
+  Daerah yang akan dihitung dibatasi dari $x = 0$ hingga $x = 5$. Karena kurva memotong sumbu-$x$ di $x=4$, maka daerah tersebut terbagi menjadi dua bagian:
+  \begin{itemize}
+    \item \textbf{Daerah I ($0 \leq x \leq 4$):} Kurva berada di bawah sumbu-$x$ ($y \leq 0$).
+    \item \textbf{Daerah II ($4 \leq x \leq 5$):} Kurva berada di atas sumbu-$x$ ($y \geq 0$).
+  \end{itemize}
+  
+  \item \textbf{Formulasi Integral Luas ($L$):}
+  \begin{equation*}
+    L = -\int_{0}^{4} (x^2 - 4x) \, dx + \int_{4}^{5} (x^2 - 4x) \, dx
+  \end{equation*}
+  
+  \item \textbf{Perhitungan Integral:}
+  Fungsi integral umumnya adalah: $\int (x^2 - 4x) \, dx = \frac{1}{3}x^3 - 2x^2$.
+  
+  Menghitung Daerah I:
+  \begin{align*}
+    L_1 = -\left[ \frac{1}{3}x^3 - 2x^2 \right]_{0}^{4} &= -\left( \left(\frac{64}{3} - 32\right) - 0 \right) \\
+    &= -\left( \frac{64 - 96}{3} \right) = \frac{32}{3} \text{ satuan luas}
+  \end{align*}
+  
+  Menghitung Daerah II:
+  \begin{align*}
+    L_2 = \left[ \frac{1}{3}x^3 - 2x^2 \right]_{4}^{5} &= \left( \frac{125}{3} - 50 \right) - \left( \frac{64}{3} - 32 \right) \\
+    &= \left( -\frac{25}{3} \right) - \left( -\frac{32}{3} \right) = \frac{7}{3} \text{ satuan luas}
+  \end{align_*}
+  
+  \item \textbf{Total Luas Daerah:}
+  \begin{equation*}
+    L = L_1 + L_2 = \frac{32}{3} + \frac{7}{3} = \frac{39}{3} = 13
+  \end{equation*}
+\end{enumerate}
+\textbf{Jawaban:} Luas daerah tersebut adalah \textbf{$13$ satuan luas}.
+
+\newpage
+
+\section*{Soal 2: Panjang Busur Kurva Fungsi $y$}
+\textbf{Soal:} Tentukan panjang busur dari kurva $24xy = y^4 + 48$ dari $y = 2$ sampai $y = 4$.
+
+\subsection*{Langkah Penyelesaian:}
+\begin{enumerate}
+  \item \textbf{Eksplisitkan Fungsi ke dalam $x = f(y)$:}
+  \begin{equation*}
+    x = \frac{y^4 + 48}{24y} = \frac{1}{24}y^3 + 2y^{-1}
+  \end{equation*}
+  
+  \item \textbf{Mencari Turunan Pertama $\frac{dx}{dy}$:}
+  \begin{equation*}
+    \frac{dx}{dy} = \frac{3}{24}y^2 - 2y^{-2} = \frac{1}{8}y^2 - \frac{2}{y^2}
+  \end{equation*}
+  
+  \item \textbf{Menghitung Nilai $1 + \left(\frac{dx}{dy}\right)^2$:}
+  \begin{align*}
+    1 + \left(\frac{dx}{dy}\right)^2 &= 1 + \left( \frac{1}{8}y^2 - \frac{2}{y^2} \right)^2 \\
+    &= 1 + \left( \frac{1}{64}y^4 - 2\left(\frac{1}{8}y^2\right)\left(\frac{2}{y^2}\right) + \frac{4}{y^4} \right) \\
+    &= 1 + \frac{1}{64}y^4 - \frac{1}{2} + \frac{4}{y^4} \\
+    &= \frac{1}{64}y^4 + \frac{1}{2} + \frac{4}{y^4} = \left( \frac{1}{8}y^2 + \frac{2}{y^2} \right)^2
+  \end{align*}
+  
+  \item \textbf{Formulasi dan Perhitungan Panjang Busur ($S$):}
+  \begin{align*}
+    S = \int_{2}^{4} \sqrt{1 + \left(\frac{dx}{dy}\right)^2} \, dy &= \int_{2}^{4} \left( \frac{1}{8}y^2 + \frac{2}{y^2} \right) \, dy \\
+    &= \left[ \frac{1}{24}y^3 - \frac{2}{y} \right]_{2}^{4}
+  \end{align*}
+  
+  Substitusikan batas atas ($y=4$) and batas bawah ($y=2$):
+  \begin{align*}
+    \text{Batas atas:} \quad &\left( \frac{64}{24} - \frac{2}{4} \right) = \frac{8}{3} - \frac{1}{2} = \frac{13}{6} \\
+    \text{Batas bawah:} \quad &\left( \frac{8}{24} - \frac{2}{2} \right) = \frac{1}{3} - 1 = -\frac{2}{3} \\
+    S = \frac{13}{6} - \left( -\frac{2}{3} \right) &= \frac{13}{6} + \frac{4}{6} = \frac{17}{6} = 2\frac{5}{6}
+  \end{align*}
+\end{enumerate}
+\textbf{Jawaban:} Panjang busur kurva tersebut adalah \textbf{$\frac{17}{6}$ atau $2\frac{5}{6}$ satuan panjang}.
+
+\newpage
+
+\section*{Soal 3: Titik Singular dan Garis Singgung Kurva Polar}
+\textbf{Soal:} Hitunglah titik singular dan persamaan garis singgung dari kurva polar Kardioida $r = 1 - \cos\theta$.
+
+\subsection*{Langkah Penyelesaian:}
+\begin{enumerate}
+  \item \textbf{Titik Singular (Kuspa/Cusp):}
+  Pada kurva polar, titik singular terjadi pada titik asal (pole) di mana $r = 0$ dan $\frac{dr}{d\theta} = 0$ secara bersamaan.
+  \begin{align*}
+    r = 0 &\implies 1 - \cos\theta = 0 \implies \cos\theta = 1 \implies \theta = 0, 2\pi, \dots \\
+    \frac{dr}{d\theta} = \sin\theta &\implies \sin(0) = 0
+  \end{align*}
+  Jadi, titik singular berada pada koordinat polar \textbf{$(r, \theta) = (0,0)$}. Dalam koordinat Kartesius, titik ini berada di \textbf{$(0,0)$}.
+
+  \item \textbf{Garis Singgung Khusus:}
+  Hubungan ke koordinat Kartesius adalah $x = r\cos\theta$ dan $y = r\sin\theta$. Titik singgung dicari dengan mencari koordinat Kartesius $(x,y)$ terlebih dahulu sebelum menyusun persamaan garisnya.
+  
+  \begin{itemize}
+    \item \textbf{Garis Singgung Horizontal ($\frac{dy}{dx} = 0$):} 
+    Terjadi saat $\cos\theta = -1/2 \implies \theta = \frac{2\pi}{3}$ dan $\theta = \frac{4\pi}{3}$.
+    
+    Untuk $\theta = \frac{2\pi}{3}$:
+    \begin{align*}
+      r &= 1 - \cos\left(\frac{2\pi}{3}\right) = 1 - \left(-\frac{1}{2}\right) = \frac{3}{2} \\
+      x &= \frac{3}{2}\cos\left(\frac{2\pi}{3}\right) = -\frac{3}{4}, \quad y = \frac{3}{2}\sin\left(\frac{2\pi}{3}\right) = \frac{3\sqrt{3}}{4}
+    \end{align*}
+    Persamaan garis horizontal adalah $y = y_1 \implies y = \frac{3\sqrt{3}}{4}$.
+    
+    Untuk $\theta = \frac{4\pi}{3}$:
+    \begin{align*}
+      r &= 1 - \cos\left(\frac{4\pi}{3}\right) = \frac{3}{2} \\
+      x &= \frac{3}{2}\cos\left(\frac{4\pi}{3}\right) = -\frac{3}{4}, \quad y = \frac{3}{2}\sin\left(\frac{4\pi}{3}\right) = -\frac{3\sqrt{3}}{4}
+    \end{align*}
+    Persamaan garis horizontal adalah $y = -\frac{3\sqrt{3}}{4}$.
+    
+    \item \textbf{Garis Singgung Vertikal ($\frac{dy}{dx} \to \infty$):} 
+    Terjadi saat $\cos\theta = \frac{1}{2} \implies \theta = \frac{\pi}{3}$ dan $\theta = \frac{5\pi}{3}$.
+    
+    Untuk $\theta = \frac{\pi}{3}$:
+    \begin{align*}
+      r &= 1 - \cos\left(\frac{\pi}{3}\right) = 1 - \frac{1}{2} = \frac{1}{2} \\
+      x &= \frac{1}{2}\cos\left(\frac{\pi}{3}\right) = \frac{1}{4}, \quad y = \frac{1}{2}\sin\left(\frac{\pi}{3}\right) = \frac{\sqrt{3}}{4}
+    \end{align*}
+    Persamaan garis vertikal adalah $x = x_1 \implies x = \frac{1}{4}$.
+    
+    Untuk $\theta = \frac{5\pi}{3}$:
+    \begin{align*}
+      r &= 1 - \cos\left(\frac{5\pi}{3}\right) = \frac{1}{2} \\
+      x &= \frac{1}{2}\cos\left(\frac{5\pi}{3}\right) = \frac{1}{4}, \quad y = \frac{1}{2}\sin\left(\frac{5\pi}{3}\right) = -\frac{\sqrt{3}}{4}
+    \end{align*}
+    Persamaan garis vertikal adalah $x = \frac{1}{4}$.
+  \end{itemize}
+\end{enumerate}
+\textbf{Jawaban:} Titik singular berada di \textbf{$(0,0)$}. Persamaan garis singgung horizontal adalah \textbf{$y = \pm\frac{3\sqrt{3}}{4}$} dan persamaan garis singgung vertikal adalah \textbf{$x = \frac{1}{4}$}.
+
+\newpage
+
+\section*{Soal 4: Panjang Busur Persamaan Parametrik}
+\textbf{Soal:} Diketahui persamaan parametrik $x = a(t - \sin t)$ dan $y = a(1 - \cos t)$ (Kurva Sikloida). Hitunglah panjang busur dari $t = 0$ sampai $t = 2\pi$.
+
+\subsection*{Langkah Penyelesaian:}
+\begin{enumerate}
+  \item \textbf{Mencari Turunan Berdasarkan Parameter $t$:}
+  \begin{equation*}
+    \frac{dx}{dt} = a(1 - \cos t) \quad \text{dan} \quad \frac{dy}{dt} = a\sin t
+  \end{equation*}
+  
+  \item \textbf{Menghitung Komponen di Dalam Akar:}
+  \begin{align*}
+    \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= a^2(1 - \cos t)^2 + (a\sin t)^2 \\
+    &= a^2(1 - 2\cos t + \cos^2 t + \sin^2 t) \\
+    &= a^2(2 - 2\cos t) = 2a^2(1 - \cos t)
+  \end{align*}
+  
+  \item \textbf{Menyederhanakan Menggunakan Identitas Sudut Rangkap:}
+  Ingat identitas $1 - \cos t = 2\sin^2\left(\frac{t}{2}\right)$. Maka:
+  \begin{equation*}
+    2a^2(1 - \cos t) = 2a^2 \cdot 2\sin^2\left(\frac{t}{2}\right) = 4a^2\sin^2\left(\frac{t}{2}\right)
+  \end{equation*}
+  Ketika ditarik keluar dari akar kuadrat pada interval $0 \leq t \leq 2\pi$, nilai $\sin\left(\frac{t}{2}\right)$ selalu positif (berada di kuadran I dan II), sehingga tanda mutlak bisa langsung dilepas:
+  \begin{equation*}
+    \sqrt{4a^2\sin^2\left(\frac{t}{2}\right)} = 2a\sin\left(\frac{t}{2}\right)
+  \end{equation*}
+  
+  \item \textbf{Integrasi Batas Panjang Busur ($S$):}
+  \begin{align*}
+    S &= \int_{0}^{2\pi} 2a\sin\left(\frac{t}{2}\right) \, dt \\
+    &= 2a \left[ -2\cos\left(\frac{t}{2}\right) \right]_{0}^{2\pi} \\
+    &= -4a \left[ \cos\left(\frac{2\pi}{2}\right) - \cos(0) \right] \\
+    &= -4a [ \cos(\pi) - \cos(0) ] \\
+    &= -4a [ -1 - 1 ] = -4a(-2) = 8a
+  \end{align*}
+\end{enumerate}
+\textbf{Jawaban:} Panjang busur kurva parametrik tersebut adalah \textbf{$8a$}.
+
+\newpage
+
+\section*{Soal 5: Titik Berat (Sentroid) Daerah di Antara Dua Kurva}
+\textbf{Soal:} Diketahui daerah dibatasi oleh kurva $y^2 = 2x$ dan $y = x - x^2$. Hitunglah koordinat titik beratnya $(\bar{x}, \bar{y})$.
+
+\subsection*{Langkah Penyelesaian:}
+\begin{enumerate}
+  \item \textbf{Menentukan Titik Potong Kedua Kurva:}
+  Dari $y^2 = 2x \implies x = \frac{y^2}{2}$. Substitusikan ke dalam persamaan kurva kedua:
+  \begin{align*}
+    y = \frac{y^2}{2} - \left(\frac{y^2}{2}\right)^2 &\implies y = \frac{y^2}{2} - \frac{y^4}{4} \\
+    4y = 2y^2 - y^4 &\implies y^4 - 2y^2 + 4y = 0 \\
+    y(y^3 - 2y + 4) = 0
+  \end{align*}
+  Akar nyata dari persamaan di atas adalah $y = 0 \implies x = 0$ dan $y = -2 \implies x = \frac{(-2)^2}{2} = 2$.
+  Jadi, kedua kurva berpotongan di $(0,0)$ and $(2,-2)$. Batas integrasi terhadap $x$ adalah $[0, 2]$.
+
+  \item \textbf{Menghitung Luas Daerah ($A$):}
+  Pada interval $0 \leq x \leq 2$, kurva atas adalah $y_{\text{atas}} = x - x^2$ dan kurva bawah adalah cabang negatif parabola yaitu $y_{\text{bawah}} = -\sqrt{2x}$.
+  \begin{align*}
+    A &= \int_{0}^{2} \left( (x - x^2) - (-\sqrt{2x}) \right) \, dx = \int_{0}^{2} (x - x^2 + \sqrt{2}x^{1/2}) \, dx \\
+    &= \left[ \frac{1}{2}x^2 - \frac{1}{3}x^3 + \frac{2}{3}\sqrt{2}x^{3/2} \right]_{0}^{2} \\
+    &= \left( 2 - \frac{8}{3} + \frac{2}{3}\sqrt{2}(2\sqrt{2}) \right) - 0 = 2 - \frac{8}{3} + \frac{8}{3} = 2
+  \end{align*}
+
+  \item \textbf{Menghitung Momen Statis Terhadap Sumbu-$y$ ($M_y$):}
+  \begin{align*}
+    M_y &= \int_{0}^{2} x \cdot (x - x^2 + \sqrt{2}x^{1/2}) \, dx = \int_{0}^{2} (x^2 - x^3 + \sqrt{2}x^{3/2}) \, dx \\
+    &= \left[ \frac{1}{3}x^3 - \frac{1}{4}x^4 + \frac{2}{5}\sqrt{2}x^{5/2} \right]_{0}^{2} \\
+    &= \left( \frac{8}{3} - 4 + \frac{2}{5}\sqrt{2}(4\sqrt{2}) \right) - 0 = \frac{8}{3} - 4 + \frac{16}{5} = \frac{28}{15}
+  \end{align*}
+
+  \item \textbf{Menghitung Momen Statis Terhadap Sumbu-$x$ ($M_x$):}
+  \begin{align*}
+    M_x &= \frac{1}{2}\int_{0}^{2} \left( y_{\text{atas}}^2 - y_{\text{bawah}}^2 \right) \, dx \\
+    &= \frac{1}{2}\int_{0}^{2} \left( (x-x^2)^2 - (-\sqrt{2x})^2 \right) \, dx \\
+    &= \frac{1}{2}\int_{0}^{2} (x^2 - 2x^3 + x^4 - 2x) \, dx \\
+    &= \frac{1}{2}\left[ \frac{1}{3}x^3 - \frac{1}{2}x^4 + \frac{1}{5}x^5 - x^2 \right]_{0}^{2} \\
+    &= \frac{1}{2}\left( \frac{8}{3} - 8 + \frac{32}{5} - 4 \right) = \frac{1}{2}\left( \frac{40 - 120 + 96 - 60}{15} \right) \\
+    &= \frac{1}{2}\left( -\frac{44}{15} \right) = -\frac{22}{15}
+  \end{align*}
+
+  \item \textbf{Menentukan Koordinat Titik Berat $(\bar{x}, \bar{y})$:}
+  \begin{align*}
+    \bar{x} &= \frac{M_y}{A} = \frac{28/15}{2} = \frac{14}{15} \\
+    \bar{y} &= \frac{M_x}{A} = \frac{-22/15}{2} = -\frac{11}{15}
+  \end{align*}
+\end{enumerate}
+\textbf{Jawaban:} Koordinat titik berat dari daerah tersebut adalah \textbf{$\left(\frac{14}{15}, -\frac{11}{15}\right)$}.
+
+\end{document}
