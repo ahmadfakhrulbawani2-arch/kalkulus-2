@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Luas Daerah Antara Dua Lingkaran Polar}}
+\author{A. Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan dua buah kurva lingkaran dalam koordinat polar sebagai berikut:
+\begin{align}
+  r_1 &= -6\sin\theta \quad \text{(Lingkaran di bawah sumbu-}x\text{)} \\
+  r_2 &= 3 \quad \text{(Lingkaran berpusat di titik asal)}
+\end{align}
+Tentukan luas daerah yang berada di \textbf{dalam} lingkaran $r_1$ dan di \textbf{luar} lingkaran $r_2$.
+
+\section{Langkah-Langkah Penyelesaian}
+
+\subsection{Menentukan Titik Potong}
+Untuk mengetahui batas-batas integrasi sudut $\theta$, kita samakan kedua fungsi kurva polar tersebut:
+\begin{align*}
+  r_1 &= r_2 \\
+  -6\sin\theta &= 3 \\
+  \sin\theta &= -\frac{1}{2}
+\end{align*}
+Nilai sudut $\theta$ yang memenuhi persamaan di atas pada kuadran III dan IV adalah:
+\begin{equation}
+  \theta = -\frac{5\pi}{6} \quad \text{dan} \quad \theta = -\frac{\pi}{6}
+\end{equation}
+
+\subsection{Analisis Kurva dan Sifat Simetri}
+Pada rentang sudut tersebut, daerah luar dibatasi oleh lingkaran $r_1 = -6\sin\theta$ dan daerah dalamnya dipotong oleh lingkaran $r_2 = 3$. 
+
+Karena daerah ini simetris terhadap sumbu-$y$ (garis $\theta = -\frac{\pi}{2}$), kita dapat menghitung luas setengah bagian (dari $\theta = -\frac{\pi}{2}$ sampai $\theta = -\frac{\pi}{6}$) kemudian mengalikan hasilnya dengan $2$.
+
+\section{Formulasi Integral dan Perhitungan}
+Rumus luas daerah di antara dua kurva polar adalah:
+\begin{equation}
+  A = \frac{1}{2} \int_{\alpha}^{\beta} \left( r_{\text{luar}}^2 - r_{\text{dalam}}^2 \right) d\theta
+\end{equation}
+
+Memanfaatkan sifat simetri yang telah dianalisis:
+\begin{equation}
+  A = 2 \times \left[ \frac{1}{2} \int_{-\frac{\pi}{2}}^{-\frac{\pi}{6}} \left( (-6\sin\theta)^2 - (3)^2 \right) d\theta \right]
+\end{equation}
+\begin{equation}
+  A = \int_{-\frac{\pi}{2}}^{-\frac{\pi}{6}} \left( 36\sin^2\theta - 9 \right) d\theta
+\end{equation}
+
+Menggunakan identitas trigonometri $\sin^2\theta = \frac{1 - \cos(2\theta)}{2}$:
+\begin{align*}
+  A &= \int_{-\frac{\pi}{2}}^{-\frac{\pi}{6}} \left( 36\left[\frac{1 - \cos(2\theta)}{2}\right] - 9 \right) d\theta \\
+  A &= \int_{-\frac{\pi}{2}}^{-\frac{\pi}{6}} \left( 18 - 18\cos(2\theta) - 9 \right) d\theta \\
+  A &= \int_{-\frac{\pi}{2}}^{-\frac{\pi}{6}} \left( 9 - 18\cos(2\theta) \right) d\theta
+\end{align*}
+
+Melakukan proses integrasi:
+\begin{align*}
+  A &= \Big[ 9\theta - 9\sin(2\theta) \Big]_{-\frac{\pi}{2}}^{-\frac{\pi}{6}}
+\end{align*}
+
+Substitusi nilai batas atas dan batas bawah ke dalam fungsi hasil integral:
+\begin{align*}
+  A &= \left[ 9\left(-\frac{\pi}{6}\right) - 9\sin\left(-\frac{\pi}{3}\right) \right] - \left[ 9\left(-\frac{\pi}{2}\right) - 9\sin(-\pi) \right] \\
+  A &= \left[ -\frac{3\pi}{2} - 9\left(-\frac{\sqrt{3}}{2}\right) \right] - \left[ -\frac{9\pi}{2} - 0 \right] \\
+  A &= -\frac{3\pi}{2} + \frac{9\sqrt{3}}{2} + \frac{9\pi}{2} \\
+  A &= 3\pi + \frac{9\sqrt{3}}{2}
+\end{align*}
+
+\section{Kesimpulan}
+Luas daerah yang berada di dalam lingkaran $r = -6\sin\theta$ dan di luar lingkaran $r = 3$ adalah \textbf{$3\pi + \frac{9\sqrt{3}}{2}$} satuan luas (atau sekitar \textbf{$17.22$} jika dihitung dalam bentuk desimal).
+
+\end{document}
