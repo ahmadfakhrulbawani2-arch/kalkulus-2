@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Kemiringan Garis Singgung Kurva Polar Mawar}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan persamaan kurva polar berupa kurva mawar berdaun empat (\textit{four-petaled rose}):
+\begin{equation}
+  r = \sin(2\theta)
+\end{equation}
+Tentukan kemiringan (\textit{slope}) kurva polar $\frac{dy}{dx}$ pada titik-titik sudut berikut:
+\begin{equation*}
+  \theta = \pm\frac{\pi}{4}, \quad \theta = \pm\frac{3\pi}{4}
+\end{equation*}
+
+\section{Formulasi Turunan $\frac{dy}{dx}$ Kurva Polar}
+Kemiringan garis singgung kurva polar ditentukan menggunakan aturan rantai turunan parametrik koordinat Kartesius terhadap sudut $\theta$:
+\begin{equation}
+  \frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}} = \frac{\frac{dr}{d\theta}\sin\theta + r\cos\theta}{\frac{dr}{d\theta}\cos\theta - r\sin\theta}
+\end{equation}
+
+Dari persamaan utama kurva $r = \sin(2\theta)$, didapatkan turunan pertamanya terhadap $\theta$:
+\begin{equation}
+  \frac{dr}{d\theta} = 2\cos(2\theta)
+\end{equation}
+
+Substitusi nilai $r$ dan $\frac{dr}{d\theta}$ ke rumus umum menghasilkan ekspresi \textit{slope}:
+\begin{equation}
+  \frac{dy}{dx} = \frac{2\cos(2\theta)\sin\theta + \sin(2\theta)\cos\theta}{2\cos(2\theta)\cos\theta - \sin(2\theta)\sin\theta}
+\end{equation}
+
+\section{Evaluasi Nilai \textit{Slope} pada Titik-Titik Sudut}
+Karena titik-titik sudut yang diberikan berada pada posisi puncak kelopak ($2\theta = \pm\frac{\pi}{2}$ atau $\pm\frac{3\pi}{2}$), nilai turunan berarah $\frac{dr}{d\theta} = 2\cos(2\theta) = 0$. Hal ini menyederhanakan rumusan menjadi:
+\begin{equation}
+  \frac{dy}{dx} = \frac{\sin(2\theta)\cos\theta}{-\sin(2\theta)\sin\theta} = -\frac{\cos\theta}{\sin\theta} = -\cot\theta
+\end{equation}
+
+Mari kita hitung nilai eksak \textit{slope} pada masing-masing titik sudut:
+
+\subsection{Titik $\theta = \frac{\pi}{4}$}
+\begin{equation*}
+  \frac{dy}{dx} = -\cot\left(\frac{\pi}{4}\right) = -1
+\end{equation*}
+
+\subsection{Titik $\theta = -\frac{\pi}{4}$}
+\begin{equation*}
+  \frac{dy}{dx} = -\cot\left(-\frac{\pi}{4}\right) = 1
+\end{equation*}
+
+\subsection{Titik $\theta = \frac{3\pi}{4}$}
+\begin{equation*}
+  \frac{dy}{dx} = -\cot\left(\frac{3\pi}{4}\right) = 1
+\end{equation*}
+
+\subsection{Titik $\theta = -\frac{3\pi}{4}$}
+\begin{equation*}
+  \frac{dy}{dx} = -\cot\left(-\frac{3\pi}{4}\right) = -1
+\end{equation*}
+
+\section{Analisis Sketsa Grafis dan Garis Singgung}
+\begin{itemize}
+  \item \textbf{Bentuk Kurva:} Grafik dari $r = \sin(2\theta)$ membentuk sebuah mawar dengan 4 kelopak simetris yang berpusat di titik asal $(0,0)$. Puncak-puncak kelopak berada tepat pada garis arah $\theta = \pm\frac{\pi}{4}$ dan $\theta = \pm\frac{3\pi}{4}$ dengan panjang jari-jari puncak $|r| = 1$.
+  \item \textbf{Garis Singgung pada $\theta = \pm\frac{\pi}{4}$:} Di titik kuadran I ($\theta = \pi/4$), garis singgung miring ke kiri bawah dengan $m = -1$. Di titik kuadran IV ($\theta = -\pi/4$), garis singgung miring ke kanan atas dengan $m = 1$.
+  \item \textbf{Garis Singgung pada $\theta = \pm\frac{3\pi}{4}$:} Di titik kuadran II ($\theta = 3\pi/4$), garis singgung memiliki kemiringan $m = 1$. Di titik kuadran III ($\theta = -3\pi/4$), garis singgung memiliki kemiringan $m = -1$.
+\end{itemize}
+
+\end{document}
