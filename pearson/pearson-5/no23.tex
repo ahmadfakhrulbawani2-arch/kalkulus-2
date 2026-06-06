@@ -1,0 +1,105 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Luas Irisan Kurva Polar}}
+\author{A. Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan dua buah kurva dalam koordinat polar sebagai berikut:
+\begin{align}
+  r_1 &= 10(1 - \cos\theta) \quad \text{(Kardioid)} \\
+  r_2 &= 10 \quad \text{(Lingkaran)}
+\end{align}
+Tentukan luas daerah yang berada di dalam kedua kurva tersebut (\textit{shared area}).
+
+\section{Langkah-Langkah Penyelesaian}
+
+\subsection{Menentukan Titik Potong}
+Untuk mengetahui batas-batas integrasi, kita cari terlebih dahulu titik potong antara kedua kurva dengan menyamakan fungsi $r_1$ dan $r_2$:
+\begin{align*}
+  r_1 &= r_2 \\
+  10(1 - \cos\theta) &= 10 \\
+  1 - \cos\theta &= 1 \\
+  \cos\theta &= 0
+\end{align*}
+Dari persamaan di atas, nilai $\theta$ yang memenuhi pada rentang $[-\pi, \pi]$ adalah:
+\begin{equation}
+  \theta = -\frac{\pi}{2} \quad \text{dan} \quad \theta = \frac{\pi}{2}
+\end{equation}
+
+\subsection{Analisis Simetri dan Batas Integral}
+Memanfaatkan sifat simetri terhadap sumbu-$x$ (garis $\theta = 0$), daerah irisan ini terbagi menjadi dua bagian batas luar utama:
+\begin{enumerate}
+  \item Untuk rentang $-\frac{\pi}{2} \le \theta \le \frac{\pi}{2}$, kurva kardioid berada di dalam lingkaran, sehingga batas terluar daerah irisan ditentukan oleh $r_1 = 10(1 - \cos\theta)$.
+  \item Untuk rentang $\frac{\pi}{2} \le \theta \le \frac{3\pi}{2}$, lingkaran berada di dalam kardioid, sehingga batas terluar daerah irisan ditentukan oleh $r_2 = 10$.
+\end{enumerate}
+
+Dengan menggunakan sifat simetri terhadap sumbu polar, kita dapat menghitung luas setengah bagian atas (dari $\theta = 0$ hingga $\theta = \pi$) kemudian mengalikannya dengan $2$.
+
+\section{Formulasi Integral dan Perhitungan}
+Rumus umum luas daerah dalam koordinat polar adalah:
+\begin{equation}
+  A = \frac{1}{2} \int_{\alpha}^{\beta} r^2 \, d\theta
+\end{equation}
+
+Menggunakan batas yang telah dianalisis serta dikalikan 2 karena faktor simetri:
+\begin{equation}
+  A = 2 \times \left[ \frac{1}{2} \int_{0}^{\frac{\pi}{2}} (r_1)^2 \, d\theta + \frac{1}{2} \int_{\frac{\pi}{2}}^{\pi} (r_2)^2 \, d\theta \right]
+\end{equation}
+\begin{equation}
+  A = \int_{0}^{\frac{\pi}{2}} \left[10(1 - \cos\theta)\right]^2 \, d\theta + \int_{\frac{\pi}{2}}^{\pi} (10)^2 \, d\theta
+\end{equation}
+
+\subsection{Menghitung Bagian Pertama ($A_1$)}
+\begin{align*}
+  A_1 &= \int_{0}^{\frac{\pi}{2}} 100(1 - 2\cos\theta + \cos^2\theta) \, d\theta
+\end{align*}
+Menggunakan identitas trigonometri $\cos^2\theta = \frac{1 + \cos(2\theta)}{2}$:
+\begin{align*}
+  A_1 &= 100 \int_{0}^{\frac{\pi}{2}} \left( 1 - 2\cos\theta + \frac{1}{2} + \frac{\cos(2\theta)}{2} \right) \, d\theta \\
+  A_1 &= 100 \int_{0}^{\frac{\pi}{2}} \left( \frac{3}{2} - 2\cos\theta + \frac{1}{2}\cos(2\theta) \right) \, d\theta \\
+  A_1 &= 100 \left[ \frac{3}{2}\theta - 2\sin\theta + \frac{1}{4}\sin(2\theta) \right]_{0}^{\frac{\pi}{2}}
+\end{align*}
+Substitusi batas atas $\frac{\pi}{2}$ dan batas bawah $0$:
+\begin{align*}
+  A_1 &= 100 \left( \frac{3}{2}\left(\frac{\pi}{2}\right) - 2\sin\left(\frac{\pi}{2}\right) + \frac{1}{4}\sin(\pi) \right) - 100(0) \\
+  A_1 &= 100 \left( \frac{3\pi}{4} - 2 + 0 \right) \\
+  A_1 &= 75\pi - 200
+\end{align*}
+
+\subsection{Menghitung Bagian Kedua ($A_2$)}
+\begin{align*}
+  A_2 &= \int_{\frac{\pi}{2}}^{\pi} 100 \, d\theta \\
+  A_2 &= 100 \Big[ \theta \Big]_{\frac{\pi}{2}}^{\pi} \\
+  A_2 &= 100 \left( \pi - \frac{\pi}{2} \right) \\
+  A_2 &= 50\pi
+\end{align*}
+
+\subsection{Luas Total Eksak dan Desimal}
+\begin{align*}
+  A &= A_1 + A_2 \\
+  A &= (75\pi - 200) + 50\pi \\
+  A &= 125\pi - 200
+\end{align*}
+
+Jika dikonversi ke nilai pendekatan desimal ($\pi \approx 3.14159$):
+\begin{equation*}
+  A \approx 125(3.14159) - 200 = 392.699 - 200 = 192.699
+\end{equation*}
+
+\section{Kesimpulan}
+Luas total daerah yang dibagi bersama (\textit{shared area}) oleh lingkaran $r = 10$ dan kardioid $r = 10(1 - \cos\theta)$ adalah \textbf{$125\pi - 200$} satuan luas, atau sekitar \textbf{$192.70$}.
+
+\end{document}
