@@ -1,0 +1,88 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Panjang Busur Kurva Spiral Polar}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan sebuah persamaan kurva polar berbentuk spiral:
+\begin{equation}
+  r = 5\theta^2
+\end{equation}
+Hitunglah panjang lintasan (\textit{arc length}) dari kurva tersebut pada rentang sudut:
+\begin{equation*}
+  0 \le \theta \le \sqrt{45}
+\end{equation*}
+
+\section{Formulasi Rumus Panjang Busur}
+Panjang busur suatu kurva dalam koordinat polar ditentukan oleh rumus integral berikut:
+\begin{equation}
+  L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} \, d\theta
+\end{equation}
+
+\section{Langkah-Langkah Perhitungan}
+
+\subsection{Menentukan Turunan dan Komponen Kuadrat}
+Turunan pertama fungsi spiral $r$ terhadap sudut $\theta$ adalah:
+\begin{equation*}
+  \frac{dr}{d\theta} = 10\theta
+\end{equation*}
+
+Selanjutnya, kita kuadratkan masing-masing komponen penyusun di bawah tanda akar:
+\begin{align*}
+  r^2 &= (5\theta^2)^2 = 25\theta^4 \\
+  \left(\frac{dr}{d\theta}\right)^2 &= (10\theta)^2 = 100\theta^2
+\end{align*}
+
+\subsection{Menyederhanakan Bentuk Radikan}
+Jumlahkan kedua komponen kuadrat dan keluarkan faktor kuadrat sempurna dari dalam akar:
+\begin{align*}
+  \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} &= \sqrt{25\theta^4 + 100\theta^2} \\
+  &= \sqrt{25\theta^2(\theta^2 + 4)} \\
+  &= 5\theta\sqrt{\theta^2 + 4}
+\end{align*}
+
+\subsection{Evaluasi Integral Menggunakan Substitusi}
+Substitusikan komponen radikan yang telah disederhanakan ke dalam rumus panjang busur dengan batas $\alpha = 0$ dan $\beta = \sqrt{45}$:
+\begin{equation}
+  L = \int_{0}^{\sqrt{45}} 5\theta\sqrt{\theta^2 + 4} \, d\theta
+\end{equation}
+
+Gunakan teknik integrasi substitusi variabel $u$:
+\begin{equation*}
+  Misal: \ u = \theta^2 + 4 \implies du = 2\theta \, d\theta \implies \theta \, d\theta = \frac{du}{2}
+\end{equation*}
+
+Sesuaikan nilai batas integral berdasarkan variabel baru $u$:
+\begin{itemize}
+  \item Batas bawah: $\theta = 0 \implies u = 0^2 + 4 = 4$
+  \item Batas atas: $\theta = \sqrt{45} \implies u = (\sqrt{45})^2 + 4 = 49$
+\end{itemize}
+
+Lakukan kalkulasi nilai integralnya:
+\begin{align*}
+  L &= 5 \int_{4}^{49} \sqrt{u} \cdot \frac{du}{2} \\
+  L &= \frac{5}{2} \int_{4}^{49} u^{1/2} \, du \\
+  L &= \frac{5}{2} \left[ \frac{2}{3}u^{3/2} \right]_{4}^{49} \\
+  L &= \frac{5}{3} \Big[ u\sqrt{u} \Big]_{4}^{49} \\
+  L &= \frac{5}{3} \left( 49\sqrt{49} - 4\sqrt{4} \right) \\
+  L &= \frac{5}{3} \left( 49(7) - 4(2) \right) \\
+  L &= \frac{5}{3} (343 - 8) \\
+  L &= \frac{5}{3} (335) = \frac{1675}{3}
+\end{align*}
+
+\section{Kesimpulan}
+Panjang busur total dari spiral $r = 5\theta^2$ pada rentang yang diberikan adalah tepat \textbf{$\frac{1675}{3}$} atau sekitar \textbf{$558.33$} satuan panjang.
+
+\end{document}

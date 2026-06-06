@@ -1,0 +1,76 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Panjang Busur Kurva Polar}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan sebuah persamaan kurva polar:
+\begin{equation}
+  r = \sqrt{1 + \cos(2\theta)}
+\end{equation}
+Hitunglah panjang lintasan (\textit{arc length}) dari kurva tersebut pada rentang sudut:
+\begin{equation*}
+  0 \le \theta \le \frac{\pi\sqrt{2}}{4}
+\end{equation*}
+
+\section{Penyederhanakan Fungsi Kurva}
+Menggunakan identitas sudut ganda trigonometri $\quad 1 + \cos(2\theta) = 2\cos^2\theta \quad$, persamaan kurva polar dapat disederhanakan terlebih dahulu:
+\begin{equation*}
+  r = \sqrt{2\cos^2\theta} = \sqrt{2}|\cos\theta|
+\end{equation*}
+Karena nilai batas atas sudut $\theta = \frac{\pi\sqrt{2}}{4} \approx 1.11\text{ rad}$ berada di dalam Kuadran I ($0 \le \theta \le \frac{\pi}{2}$), maka fungsi $\cos\theta$ bernilai positif. Oleh karena itu, tanda mutlak dapat dihilangkan:
+\begin{equation}
+  r = \sqrt{2}\cos\theta
+\end{equation}
+
+\section{Langkah-Langkah Perhitungan}
+
+\subsection{Menentukan Turunan dan Komponen Kuadrat}
+Turunan pertama fungsi $r$ terhadap $\theta$ adalah:
+\begin{equation*}
+  \frac{dr}{d\theta} = -\sqrt{2}\sin\theta
+\end{equation*}
+
+Kita kuadratkan masing-masing komponen untuk dimasukkan ke dalam bentuk radikan panjang busur:
+\begin{align*}
+  r^2 &= (\sqrt{2}\cos\theta)^2 = 2\cos^2\theta \\
+  \left(\frac{dr}{d\theta}\right)^2 &= (-\sqrt{2}\sin\theta)^2 = 2\sin^2\theta
+\end{align*}
+
+\subsection{Menyederhanakan Bentuk di Dalam Akar}
+Gabungkan kedua komponen kuadrat tersebut dengan menggunakan identitas dasar Pythagoras trigonometri $\cos^2\theta + \sin^2\theta = 1$:
+\begin{align*}
+  r^2 + \left(\frac{dr}{d\theta}\right)^2 &= 2\cos^2\theta + 2\sin^2\theta \\
+  &= 2(\cos^2\theta + \sin^2\theta) = 2
+\end{align*}
+
+\subsection{Evaluasi Integral Panjang Busur}
+Rumus panjang busur dalam koordinat polar didefinisikan sebagai:
+\begin{equation}
+  L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} \, d\theta
+\end{equation}
+
+Substitusikan batas integral $\alpha = 0$ dan $\beta = \frac{\pi\sqrt{2}}{4}$ serta hasil penyederhanaan radikan yang telah diperoleh:
+\begin{align*}
+  L &= \int_{0}^{\frac{\pi\sqrt{2}}{4}} \sqrt{2} \, d\theta \\
+  L &= \sqrt{2} \ \Big[ \theta \Big]_{0}^{\frac{\pi\sqrt{2}}{4}} \\
+  L &= \sqrt{2} \left( \frac{\pi\sqrt{2}}{4} - 0 \right) \\
+  L &= \frac{2\pi}{4} = \frac{\pi}{2}
+\end{align*}
+
+\section{Kesimpulan}
+Panjang busur total dari kurva $r = \sqrt{1 + \cos(2\theta)}$ pada rentang sudut yang ditentukan adalah tepat \textbf{$\frac{\pi}{2}$} satuan panjang.
+
+\end{document}

@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Luas Permukaan Benda Putar Kurva Parametrik}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan sebuah kurva parametrik yang didefinisikan oleh persamaan:
+\begin{align}
+  x &= \frac{1}{2}\cos(2t) \\
+  y &= 3 + \frac{1}{2}\sin(2t)
+\end{align}
+pada rentang parameter $0 \le t \le \frac{\pi}{2}$. Hitunglah luas permukaan benda putar (\textit{surface area}) yang dihasilkan jika kurva tersebut diputar sejauh $360^\circ$ mengelilingi \textbf{sumbu-}$x$.
+
+\section{Formulasi Rumus Luas Permukaan Benda Putar}
+Luas permukaan benda putar yang dihasilkan dari rotasi suatu kurva parametrik mengelilingi sumbu-$x$ dapat dicari dengan rumus integral:
+\begin{equation}
+  S = \int_{\alpha}^{\beta} 2\pi y \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} \, dt
+\end{equation}
+
+\section{Langkah-Langkah Perhitungan}
+
+\subsection{Menentukan Turunan Komponen Parametrik}
+Pertama, cari turunan pertama dari masing-masing komponen variabel terhadap parameter $t$:
+\begin{align*}
+  \frac{dx}{dt} &= \frac{1}{2} \cdot \Big(-\sin(2t) \cdot 2\Big) = -\sin(2t) \\
+  \frac{dy}{dt} &= 0 + \frac{1}{2} \cdot \Big(\cos(2t) \cdot 2\Big) = \cos(2t)
+\end{align*}
+
+\subsection{Menyederhanakan Panjang Diferensial Busur}
+Lakukan penjumlahan kuadrat turunan untuk menyederhanakan ekspresi di bawah tanda akar dengan menggunakan identitas dasar Pythagoras trigonometri $\sin^2\theta + \cos^2\theta = 1$:
+\begin{align*}
+  \left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2 &= \Big(-\sin(2t)\Big)^2 + \Big(\cos(2t)\Big)^2 \\
+  &= \sin^2(2t) + \cos^2(2t) = 1
+\end{align*}
+Maka bagian akarnya bernilai konstan:
+\begin{equation*}
+  \sqrt{\left(\frac{dx}{dt}\right)^2 + \left(\frac{dy}{dt}\right)^2} = \sqrt{1} = 1
+\end{equation*}
+
+\subsection{Evaluasi Integral Luas Permukaan}
+Substitusikan fungsi $y$, batas nilai $t$ ($\alpha = 0$ dan $\beta = \frac{\pi}{2}$), serta elemen akar yang telah disederhanakan ke dalam formula utama:
+\begin{align*}
+  S &= \int_{0}^{\frac{\pi}{2}} 2\pi \left( 3 + \frac{1}{2}\sin(2t) \right) \cdot (1) \, dt \\
+  S &= 2\pi \int_{0}^{\frac{\pi}{2}} \left( 3 + \frac{1}{2}\sin(2t) \right) \, dt
+\end{align*}
+
+Lakukan proses integrasi komponen demi komponen:
+\begin{align*}
+  S &= 2\pi \left[ 3t - \frac{1}{4}\cos(2t) \right]_{0}^{\frac{\pi}{2}}
+\end{align*}
+
+Substitusikan nilai batas atas dan batas bawah ke dalam fungsi hasil integral tersebut:
+\begin{align*}
+  S &= 2\pi \left[ \left( 3\left(\frac{\pi}{2}\right) - \frac{1}{4}\cos\left(2 \cdot \frac{\pi}{2}\right) \right) - \left( 3(0) - \frac{1}{4}\cos(0) \right) \right] \\
+  S &= 2\pi \left[ \left( \frac{3\pi}{2} - \frac{1}{4}(-1) \right) - \left( 0 - \frac{1}{4}(1) \right) \right] \\
+  S &= 2\pi \left[ \frac{3\pi}{2} + \frac{1}{4} + \frac{1}{4} \right] \\
+  S &= 2\pi \left[ \frac{3\pi}{2} + \frac{1}{2} \right]
+\end{align*}
+
+Kalikan konstanta luar $2\pi$ ke dalam kurung siku untuk mendapatkan bentuk penyelesaian akhir:
+\begin{align*}
+  S &= 3\pi^2 + \pi = \pi(3\pi + 1)
+\end{align*}
+
+\section{Kesimpulan}
+Luas permukaan benda putar yang terbentuk dari perputaran kurva parametrik tersebut terhadap sumbu-$x$ adalah tepat \textbf{$\pi(3\pi + 1)$} atau \textbf{$3\pi^2 + \pi$} satuan luas.
+
+\end{document}

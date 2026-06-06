@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Penyelesaian Panjang Busur Kurva Kardioid Polar}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan sebuah persamaan kurva polar berbentuk kardioid:
+\begin{equation}
+  r = 1 + \cos\theta
+\end{equation}
+Hitunglah panjang total lintasan (\textit{arc length}) dari kurva tersebut.
+
+\section{Formulasi Rumus Panjang Busur}
+Panjang busur suatu kurva dalam koordinat polar pada rentang sudut $\alpha \le \theta \le \beta$ ditentukan oleh rumus:
+\begin{equation}
+  L = \int_{\alpha}^{\beta} \sqrt{r^2 + \left(\frac{dr}{d\theta}\right)^2} \, d\theta
+\end{equation}
+
+Untuk sebuah kardioid utuh penuh, batas integrasi standarnya adalah dari $\theta = 0$ hingga $\theta = 2\pi$.
+
+\section{Langkah-Langkah Perhitungan}
+
+\subsection{Menentukan Turunan dan Komponen Kuadrat}
+Turunan pertama fungsi $r$ terhadap $\theta$ adalah:
+\begin{equation*}
+  \frac{dr}{d\theta} = -\sin\theta
+\end{equation*}
+
+Selanjutnya, kita kuadratkan masing-masing komponen penyusun di dalam akar:
+\begin{align*}
+  r^2 &= (1 + \cos\theta)^2 = 1 + 2\cos\theta + \cos^2\theta \\
+  \left(\frac{dr}{d\theta}\right)^2 &= (-\sin\theta)^2 = \sin^2\theta
+\end{align*}
+
+\subsection{Menyederhanakan Bentuk Radikan}
+Gabungkan kedua komponen kuadrat tersebut menggunakan identitas Pythagoras trigonometri $\cos^2\theta + \sin^2\theta = 1$:
+\begin{align*}
+  r^2 + \left(\frac{dr}{d\theta}\right)^2 &= 1 + 2\cos\theta + \cos^2\theta + \sin^2\theta \\
+  &= 1 + 2\cos\theta + 1 \\
+  &= 2 + 2\cos\theta = 2(1 + \cos\theta)
+\end{align*}
+
+Gunakan identitas sudut ganda $\quad 1 + \cos\theta = 2\cos^2\left(\frac{\theta}{2}\right) \quad$ untuk mereduksi bentuk penjumlahan menjadi perkalian kuadrat sempurna:
+\begin{equation}
+  2(1 + \cos\theta) = 2 \cdot 2\cos^2\left(\frac{\theta}{2}\right) = 4\cos^2\left(\frac{\theta}{2}\right)
+\end{equation}
+
+\subsection{Evaluasi Integral Menggunakan Sifat Simetri}
+Karena bentuk kurva kardioid simetris terhadap sumbu polar (sumbu-$x$), kita cukup menghitung panjang setengah busur atas (rentang $0 \le \theta \le \pi$) kemudian mengalikannya dengan $2$:
+\begin{align*}
+  L &= 2 \times \int_{0}^{\pi} \sqrt{4\cos^2\left(\frac{\theta}{2}\right)} \, d\theta \\
+  L &= 2 \times \int_{0}^{\pi} 2\left|\cos\left(\frac{\theta}{2}\right)\right| \, d\theta
+\end{align*}
+
+Pada rentang $0 \le \theta \le \pi$, nilai fungsi $\cos\left(\frac{\theta}{2}\right) \ge 0$, sehingga tanda mutlak dapat dihilangkan:
+\begin{align*}
+  L &= 4 \int_{0}^{\pi} \cos\left(\frac{\theta}{2}\right) \, d\theta \\
+  L &= 4 \left[ 2\sin\left(\frac{\theta}{2}\right) \right]_{0}^{\pi} \\
+  L &= 8 \left( \sin\left(\frac{\pi}{2}\right) - \sin(0) \right) \\
+  L &= 8 (1 - 0) = 8
+\end{align*}
+
+\section{Kesimpulan}
+Panjang busur total dari kurva kardioid $r = 1 + \cos\theta$ adalah tepat \textbf{8} satuan panjang.
+
+\end{document}
