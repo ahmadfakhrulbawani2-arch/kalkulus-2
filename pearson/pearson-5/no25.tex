@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+
+\title{\textbf{Mencari Kemiringan Garis Singgung Kurva Polar}}
+\author{Ahmad Fakhrul Bawani}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Deskripsi Masalah}
+Diberikan persamaan kurva polar:
+\begin{equation}
+  r = -5 + 5\cos\theta
+\end{equation}
+Tentukan kemiringan (\textit{slope}) kurva dan persamaan garis singgungnya pada titik saat $\theta = \pm\frac{\pi}{2}$.
+
+\section{Konversi Kurva Polar ke Persamaan Kartesius ($xy$)}
+Berdasarkan petunjuk untuk mengubah ke dalam bentuk variabel $x$ dan $y$, kita gunakan identitas transformasi koordinat polar ke kartesius:
+\begin{equation*}
+  x = r\cos\theta \implies \cos\theta = \frac{x}{r} \quad \text{dan} \quad r = \pm\sqrt{x^2 + y^2}
+\end{equation*}
+
+Substitusikan nilai $\cos\theta$ ke dalam persamaan awal:
+\begin{align*}
+  r &= -5 + 5\left(\frac{x}{r}\right) \\
+  r^2 &= -5r + 5x
+\end{align*}
+
+Substitusikan hubungan $r^2 = x^2 + y^2$ dan $r = \sqrt{x^2 + y^2}$:
+\begin{align*}
+  x^2 + y^2 &= -5\sqrt{x^2 + y^2} + 5x \\
+  x^2 + y^2 - 5x &= -5\sqrt{x^2 + y^2}
+\end{align*}
+Kuadratkan kedua sisi untuk menghilangkan bentuk akar eliminasi variabel polar sepenuhnya:
+\begin{equation}
+  (x^2 + y^2 - 5x)^2 = 25(x^2 + y^2)
+\end{equation}
+Persamaan di atas merupakan representasi implisit kurva kardioid dalam koordinat Kartesius.
+
+\section{Menentukan Koordinat Titik Singgung}
+Kita evaluasi posisi titik pada saat $\theta = \frac{\pi}{2}$ dan $\theta = -\frac{\pi}{2}$.
+
+\subsection{Titik Pertama ($\theta = \frac{\pi}{2}$)}
+\begin{align*}
+  r &= -5 + 5\cos\left(\frac{\pi}{2}\right) = -5 + 0 = -5 \\
+  x &= r\cos\theta = -5\cos\left(\frac{\pi}{2}\right) = 0 \\
+  y &= r\sin\theta = -5\sin\left(\frac{\pi}{2}\right) = -5
+\end{align*}
+Maka titik singgung pertama berada di koordinat Kartesius \textbf{$(0, -5)$}.
+
+\subsection{Titik Kedua ($\theta = -\frac{\pi}{2}$)}
+\begin{align*}
+  r &= -5 + 5\cos\left(-\frac{\pi}{2}\right) = -5 + 0 = -5 \\
+  x &= r\cos\theta = -5\cos\left(-\frac{\pi}{2}\right) = 0 \\
+  y &= r\sin\theta = -5\sin\left(-\frac{\pi}{2}\right) = 5
+\end{align*}
+Maka titik singgung kedua berada di koordinat Kartesius \textbf{$(0, 5)$}.
+
+\section{Menentukan Kemiringan (\textit{Slope}) Kurva}
+Formulasi ekspresi untuk mencari nilai \textit{slope} $\frac{dy}{dx}$ dari kurva parametrik polar terhadap sudut $\theta$ didefinisikan sebagai:
+\begin{equation}
+  \frac{dy}{dx} = \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}} = \frac{\frac{d}{d\theta}[r\sin\theta]}{\frac{d}{d\theta}[r\cos\theta]} = \frac{\frac{dr}{d\theta}\sin\theta + r\cos\theta}{\frac{dr}{d\theta}\cos\theta - r\sin\theta}
+\end{equation}
+
+Dari fungsi utama, didapatkan turunan berarah $\frac{dr}{d\theta} = -5\sin\theta$. Mari kita evaluasi nilainya pada masing-masing titik sudut:
+
+\subsection{\textit{Slope} pada $\theta = \frac{\pi}{2}$}
+Pada sudut ini, nilai $r = -5$ dan $\frac{dr}{d\theta} = -5(1) = -5$.
+\begin{align*}
+  \frac{dy}{dx} &= \frac{(-5)\sin(\frac{\pi}{2}) + (-5)\cos(\frac{\pi}{2})}{(-5)\cos(\frac{\pi}{2}) - (-5)\sin(\frac{\pi}{2})} \\
+  &= \frac{-5(1) + 0}{0 - (-5)(1)} = \frac{-5}{5} = -1
+\end{align*}
+
+\subsection{\textit{Slope} pada $\theta = -\frac{\pi}{2}$}
+Pada sudut ini, nilai $r = -5$ dan $\frac{dr}{d\theta} = -5(-1) = 5$.
+\begin{align*}
+  \frac{dy}{dx} &= \frac{(5)\sin(-\frac{\pi}{2}) + (-5)\cos(-\frac{\pi}{2})}{(5)\cos(-\frac{\pi}{2}) - (-5)\sin(-\frac{\pi}{2})} \\
+  &= \frac{5(-1) + 0}{0 - (-5)(-1)} = \frac{-5}{-5} = 1
+\end{align*}
+
+\section{Analisis Sketsa Kurva dan Garis Singgung}
+\begin{itemize}
+  \item \textbf{Kurva Kardioid:} Grafik dari $r = -5 + 5\cos\theta$ adalah sebuah kardioid yang simetris terhadap sumbu-$x$, dengan ujung lancip berpusat di titik asal $(0,0)$ dan melebar ke arah kiri sejauh $x = -10$.
+  \item \textbf{Garis Singgung 1 (di titik $(0,-5)$):} Memiliki kemiringan $m = -1$. Persamaan garisnya adalah $y - (-5) = -1(x - 0) \implies y = -x - 5$.
+  \item \textbf{Garis Singgung 2 (di titik $(0,5)$):} Memiliki kemiringan $m = 1$. Persamaan garisnya adalah $y - 5 = 1(x - 0) \implies y = x + 5$.
+\end{itemize}
+
+\end{document}
